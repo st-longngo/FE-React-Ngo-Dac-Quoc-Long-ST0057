@@ -3,9 +3,10 @@ import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import Banner from '../../components/layout/Banner';
 import About from './partials/about/About';
-import ProductList from './partials/product-list/ProductList';
 import Chooseus from './partials/chooseus/Chooseus';
 import Contact from './partials/contact/Contact';
+import ProductSelected from './partials/product/ProductSelected';
+import ProductToday from './partials/product/ProductToday';
 
 const Home = () => {
   return (
@@ -14,9 +15,9 @@ const Home = () => {
       <main className="home-page">
         <Banner />
         <About />
-        <ProductList title="Selected just for you" button={true} />
+        <ProductSelected />
         <Chooseus/>
-        <ProductList title="Products in today" button={false} />
+        <ProductToday />
         <Contact/>
       </main>
       <Footer />

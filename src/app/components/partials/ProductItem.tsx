@@ -3,17 +3,21 @@ import Badge from './Badge';
 
 interface IProductItemProps {
   product: {
-    id: string,
-    name: string,
-    image: string,
-    price: number,
-    discount: number,
+    id: string;
+    name: string;
+    image: string;
+    price: number;
+    discount: number;
   };
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
-  const {name, image, price, discount} = product;
+const calPriceDiscount = (price: number, discount: number): string => {
+  return (price - (price * discount) / 100).toFixed(2);
+};
 
+const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
+  const { name, image, price, discount } = product;
+  
   return (
     <li className="col-3 col-sm-6">
       <div className={discount ? "product product-sale" : "product"}>
@@ -30,14 +34,16 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             </a>
           </h4>
           <div className="product-price">
-            {discount ? (
-              <>
-                <span>{(price - (price * discount) / 100).toFixed(2)}</span>
-                <span className="product-discount">${price}</span>
-              </>
-            ) : (
-              <span>${price}</span>
-            )}
+            {
+              discount ? (
+                <>
+                  <span>${calPriceDiscount(price, discount)}</span>
+                  <span className="product-discount">${price}</span>
+                </>
+              ) : (
+                <span>${price}</span>
+              )
+            }
           </div>
         </div>
       </div>

@@ -1,45 +1,6 @@
 import React from 'react';
 import Icon from '../../assets/icon';
 
-const dataSocialFooter = [
-  {
-    iconClass: 'bx bxl-facebook',
-  },
-  {
-    iconClass: 'bx bxl-twitter',
-  },
-  {
-    iconClass: 'bx bxl-linkedin',
-  },
-  {
-    iconClass: 'bx bxl-instagram',
-  },
-  {
-    iconClass: 'bx bxl-youtube',
-  },
-];
-
-const dataSubList1 = [
-  { title: 'Order Status' },
-  { title: 'Shipping and Delivery' },
-  { title: 'Returns' },
-  { title: 'Payment Options' },
-  { title: 'Contact Us' },
-];
-
-const dataSubList2 = [
-  { title: 'Gift Cards' },
-  { title: 'Find a store' },
-  { title: 'Newsletter' },
-  { title: 'Bacome a member' },
-  { title: 'Site feedback' },
-];
-
-const dataSubList3 = [
-  { title: 'store@uikit.com' },
-  { title: 'Hotline: +1 131 138 138' },
-];
-
 const Footer = () => {
   return (
     <footer className='footer'>
@@ -51,19 +12,35 @@ const Footer = () => {
                 <img src={Icon.Logo} alt='E-Shop' />
               </a>
               <p className='footer-desc'>
-                House My Brand designs clothing for the young, the old everyone
+                House My Brand designs clothing for the young, the old &everyone
                 in between – but most importantly, for the fashionable
               </p>
               <ul className='footer-social'>
-                {dataSocialFooter.map((item, idx) => {
-                  return (
-                    <li className='footer-social-item' key={idx}>
-                      <a href='' className='footer-social-link'>
-                        <i className={item.iconClass}></i>
-                      </a>
-                    </li>
-                  );
-                })}
+                <li className='footer-social-item'>
+                  <a href='' className='footer-social-link'>
+                    <i className='bx bxl-facebook'></i>
+                  </a>
+                </li>
+                <li className='footer-social-item'>
+                  <a href='' className='footer-social-link'>
+                    <i className='bx bxl-twitter'></i>
+                  </a>
+                </li>
+                <li className='footer-social-item'>
+                  <a href='' className='footer-social-link'>
+                    <i className='bx bxl-linkedin'></i>
+                  </a>
+                </li>
+                <li className='footer-social-item'>
+                  <a href='' className='footer-social-link'>
+                    <i className='bx bxl-instagram'></i>
+                  </a>
+                </li>
+                <li className='footer-social-item'>
+                  <a href='' className='footer-social-link'>
+                    <i className='bx bxl-youtube'></i>
+                  </a>
+                </li>
               </ul>
             </div>
             <ul className='col-7 col-sm-12 footer-menu'>
@@ -72,15 +49,31 @@ const Footer = () => {
                   <li className='footer-sub-item'>
                     <span className='sub-title'>Shopping online</span>
                   </li>
-                  {dataSubList1.map((item, idx) => {
-                    return (
-                      <li className='footer-sub-item' key={idx}>
-                        <a href='' className='footer-sub-link sub-link'>
-                          {item.title}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Order Status
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Shipping and Delivery
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Returns
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Payment Options
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Contact Us
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li className='col-4 col-sm-12 footer-item'>
@@ -88,15 +81,31 @@ const Footer = () => {
                   <li className='footer-sub-item'>
                     <span className='sub-title'>Information</span>
                   </li>
-                  {dataSubList2.map((item, idx) => {
-                    return (
-                      <li className='footer-sub-item' key={idx}>
-                        <a href='' className='footer-sub-link sub-link'>
-                          {item.title}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Gift Cards
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Find a store
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Newsletter
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Bacome a member
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link sub-link'>
+                      Site feedback
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li className='col-4 col-sm-12 footer-item'>
@@ -104,15 +113,16 @@ const Footer = () => {
                   <li className='footer-sub-item'>
                     <span className='sub-title'>Contact</span>
                   </li>
-                  {dataSubList3.map((item, idx) => {
-                    return (
-                      <li className='footer-sub-item' key={idx}>
-                        <a href='' className='footer-sub-link sub-link'>
-                          {item.title}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link'>
+                      store@uikit.com
+                    </a>
+                  </li>
+                  <li className='footer-sub-item'>
+                    <a href='' className='footer-sub-link'>
+                      Hotline: +1 131 138 138
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>

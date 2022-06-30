@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from '../../assets/images';
-import Icon from '../../assets/icon';
+import Image from '../../../assets/images';
+import Icon from '../../../assets/icon';
 import PolicyItem from '../PolicyItem';
 
 const dataPolicy = [

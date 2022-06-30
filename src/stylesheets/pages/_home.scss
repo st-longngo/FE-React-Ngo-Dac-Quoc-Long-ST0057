@@ -139,7 +139,7 @@
       }
       &-banner {
         @include size(null, 740px);
-        // background-image: url(../images/Fashion-home-image-9.png);
+        background-image: url(../assets/images/Fashion-home-image-9.png);
       }
       &-about {
         margin-bottom: 48px;
@@ -151,8 +151,8 @@
         }
       }
       &-contact {
-        // background: url(../images/Fashion-home-image-10.png) no-repeat
-        //   center/cover;
+        background: url(../assets/images/Fashion-home-image-10.png) no-repeat
+          center/cover;
           height: 217px;
         margin-bottom: 0;
       }

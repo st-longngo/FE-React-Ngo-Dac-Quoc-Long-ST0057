@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from '../../../../components/partials/ProductItem';
-import Image from '../../../../assets/images';
+import Image from '../../../../../assets/images';
 import Button from '../../../../components/partials/Button';
 
 const PRODUCTS = [

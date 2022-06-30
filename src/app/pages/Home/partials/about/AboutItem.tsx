@@ -6,8 +6,15 @@ interface IAboutItemProps {
   title: string;
   classCol: string;
   classIndex: string;
-  button: any;
-  badge?: any;
+  button: {
+    name: string,
+    type: string,
+    typeSection: string
+  };
+  badge?: {
+    discount: number,
+    type: string
+  };
 }
 
 const AboutItem: React.FC<IAboutItemProps> = ({

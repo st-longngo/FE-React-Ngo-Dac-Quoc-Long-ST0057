@@ -51,7 +51,7 @@ const About = () => {
                 classCol={item.classCol}
                 classIndex={item.classIndex}
                 button={item.button}
-                badge={item.badge || null}
+                badge={item.badge}
               />
             );
           })}

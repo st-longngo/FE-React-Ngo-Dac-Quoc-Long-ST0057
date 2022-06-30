@@ -2,7 +2,7 @@ import React from 'react';
 
 interface IBadgeProps {
   discount: number;
-  type: 'primary' | 'secondary';
+  type: string;
 }
 
 const Badge: React.FC<IBadgeProps> = ({ discount, type }) => {

@@ -23,22 +23,22 @@ const dataPolicy = [
 
 const Banner = () => {
   return (
-    <section className='section section-banner'>
-      <div className='container banner-inner'>
-        <div className='banner-content'>
-          <h2 className='txt-bold banner-title'>
+    <section className="section section-banner">
+      <div className="container banner-inner">
+        <div className="banner-content">
+          <h2 className="txt-bold banner-title">
             Sale of the<span>summer</span>collection
           </h2>
-          <a href='#' className='banner-link'>
-            <div className='banner-link-icon'>
-              <img src={Image.ArrowLeft} alt='arrow left' />
+          <a href="#" className="banner-link">
+            <div className="banner-link-icon">
+              <img src={Image.ArrowLeft} alt="arrow left" />
             </div>
-            <span className='typo-1 txt-bold banner-link-text'>shop now</span>
+            <span className="typo-1 txt-bold banner-link-text">shop now</span>
           </a>
         </div>
       </div>
-      <div className='banner-policy'>
-        <ul className='policy-list'>
+      <div className="banner-policy">
+        <ul className="policy-list">
           {dataPolicy.map((item, idx) => {
             return (
               <PolicyItem

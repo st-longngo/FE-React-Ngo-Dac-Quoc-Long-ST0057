@@ -6,7 +6,7 @@ interface IBadgeProps {
 }
 
 const Badge: React.FC<IBadgeProps> = ({ discount, type }) => {
-  return <span className={type ? `badge badge-${type}`: 'badge'}>-{discount}%</span>;
+  return <span className={type ? `badge badge-${type}`: "badge"}>-{discount}%</span>;
 };
 
 export default Badge;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductItem from '../../../../components/ProductItem';
+import ProductItem from '../../../../components/partials/ProductItem';
 import Image from '../../../../assets/images';
 import Button from '../../../../components/partials/Button';
 
@@ -41,18 +41,18 @@ interface IProductListProps {
 
 const ProductList: React.FC<IProductListProps> = ({ title, button }) => {
   return (
-    <section className='section section-product-selected'>
-      <div className='container'>
+    <section className="section section-product-selected">
+      <div className="container">
         {button ? (
-          <div className='section-header'>
-            <h3 className='txt-title section-title'>{title}</h3>
-            <Button name='show more' type='border' />
+          <div className="section-header">
+            <h3 className="txt-title section-title">{title}</h3>
+            <Button name="show more" type="border" />
           </div>
         ) : (
-          <h3 className='txt-title section-title'>{title}</h3>
+          <h3 className="txt-title section-title">{title}</h3>
         )}
-        <div className='section-content'>
-          <ul className='row'>
+        <div className="section-content">
+          <ul className="row">
             {PRODUCTS.map((product) => {
               return (
                 <ProductItem

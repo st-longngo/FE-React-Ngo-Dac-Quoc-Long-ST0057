@@ -40,9 +40,9 @@ const dataAbout = [
 
 const About = () => {
   return (
-    <section className='section section-about'>
-      <div className='container'>
-        <ul className='row'>
+    <section className="section section-about">
+      <div className="container">
+        <ul className="row">
           {dataAbout.map((item, idx) => {
             return (
               <AboutItem

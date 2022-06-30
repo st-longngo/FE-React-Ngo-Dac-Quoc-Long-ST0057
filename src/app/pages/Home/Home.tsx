@@ -11,12 +11,12 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className='home-page'>
+      <main className="home-page">
         <Banner />
         <About />
-        <ProductList title='Selected just for you' button={true} />
+        <ProductList title="Selected just for you" button={true} />
         <Chooseus/>
-        <ProductList title='Products in today' button={false} />
+        <ProductList title="Products in today" button={false} />
         <Contact/>
       </main>
       <Footer />

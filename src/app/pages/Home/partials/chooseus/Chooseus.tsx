@@ -27,11 +27,11 @@ const dataChooseus = [
 
 const Chooseus = () => {
   return (
-    <section className='section section-chooseus'>
-      <div className='container'>
-        <h3 className='txt-title section-title'>why should you choose us</h3>
-        <div className='section-content'>
-          <ul className='row'>
+    <section className="section section-chooseus">
+      <div className="container">
+        <h3 className="txt-title section-title">why should you choose us</h3>
+        <div className="section-content">
+          <ul className="row">
             {
               dataChooseus.map((chooseus, idx) => {
                 return <ChooseusItem key={idx} name={chooseus.name} icon={chooseus.icon} desc={chooseus.description}/>

@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductItem from '../../../components/ProductItem';
-import Image from '../../../assets/images';
-import Button from '../../../components/Button';
+import ProductItem from '../../../../components/ProductItem';
+import Image from '../../../../assets/images';
+import Button from '../../../../components/partials/Button';
 
 const PRODUCTS = [
   {
@@ -34,13 +34,25 @@ const PRODUCTS = [
   },
 ];
 
-const ProductToday = () => {
+interface IProductListProps {
+  title: string;
+  button: boolean;
+}
+
+const ProductList: React.FC<IProductListProps> = ({ title, button }) => {
   return (
-    <section className='section section-product-today'>
+    <section className='section section-product-selected'>
       <div className='container'>
-        <h3 className='txt-title section-title'>Products in today</h3>
+        {button ? (
+          <div className='section-header'>
+            <h3 className='txt-title section-title'>{title}</h3>
+            <Button name='show more' type='border' />
+          </div>
+        ) : (
+          <h3 className='txt-title section-title'>{title}</h3>
+        )}
         <div className='section-content'>
-          <ul className='row product-list js-product-list'>
+          <ul className='row'>
             {PRODUCTS.map((product) => {
               return (
                 <ProductItem
@@ -59,4 +71,4 @@ const ProductToday = () => {
   );
 };
 
-export default ProductToday;
+export default ProductList;

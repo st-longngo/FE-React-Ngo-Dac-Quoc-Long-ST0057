@@ -4,15 +4,15 @@ import Icon from '../../assets/icon';
 const dataNav = [
   {
     name: 'Men',
-    href: '#',
+    path: '#',
   },
   {
     name: 'Women',
-    href: '#',
+    path: '#',
   },
   {
     name: 'Kids',
-    href: '#',
+    path: '#',
   },
 ];
 
@@ -20,17 +20,17 @@ const dataHeaderExtra = [
   {
     name: 'search',
     icon: Icon.Search,
-    href: '#',
+    path: '#',
   },
   {
     name: 'cart',
     icon: Icon.Cart,
-    href: '#',
+    path: '#',
   },
   {
     name: 'avatar',
     icon: Icon.Avatar,
-    href: '#',
+    path: '#',
   },
 ];
 
@@ -49,7 +49,7 @@ const Header = () => {
               {dataNav.map((item, idx) => {
                 return (
                   <li className='nav-item' key={idx}>
-                    <a href={item.href} className='nav-link'>
+                    <a href={item.path} className='nav-link'>
                       {item.name}
                     </a>
                   </li>
@@ -61,7 +61,7 @@ const Header = () => {
             {dataHeaderExtra.map((item) => {
               return (
                 <li className='extra-item' id='search'>
-                  <a href={item.href} id={item.name} className='extra-link'>
+                  <a href={item.path} id={item.name} className='extra-link'>
                     <img
                       src={item.icon}
                       alt={item.name}

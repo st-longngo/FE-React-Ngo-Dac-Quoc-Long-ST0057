@@ -1,15 +1,23 @@
 import React from 'react';
 
 interface IButtonProps {
-  name: string,
+  title: string,
   type: string,
   typeSection?: string
 }
 
-const Button: React.FC<IButtonProps> = ({name, type, typeSection}) => {
+const Button: React.FC<IButtonProps> = ({title, type, typeSection}) => {
+  let classButton = 'btn';
+  if(type && typeSection) {
+    classButton += ` btn-${type} btn-${typeSection}`;
+  } 
+  if(type && !typeSection) {
+    classButton += ` btn-${type}`;
+  }
+
   return (
-    <a href="#" className={type && typeSection ? `btn btn-${type} btn-${typeSection}` : (!typeSection ? `btn btn-${type}` : `btn`)}>
-      {name}
+    <a href="#" className={classButton}>
+      {title}
     </a>
   )
 }

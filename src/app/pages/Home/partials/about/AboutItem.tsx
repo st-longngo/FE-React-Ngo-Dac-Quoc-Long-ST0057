@@ -7,7 +7,7 @@ interface IAboutItemProps {
   classCol: string;
   classIndex: string;
   button: {
-    name: string;
+    title: string;
     type: string;
     typeSection: string;
   };
@@ -36,7 +36,7 @@ const AboutItem: React.FC<IAboutItemProps> = ({
           <h4 className="typo-1 about-title">{title}</h4>
           <div className="about-link">
             <Button
-              name={button.name}
+              title={button.title}
               type={button.type}
               typeSection={button.typeSection}
             />

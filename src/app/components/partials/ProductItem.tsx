@@ -2,18 +2,18 @@ import React from 'react';
 import Badge from './Badge';
 
 interface IProductItemProps {
-  name: string;
-  image: string;
-  price: number;
-  discount: number;
+  product: {
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    discount: number,
+  };
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({
-  name,
-  image,
-  price,
-  discount,
-}) => {
+const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
+  const {name, image, price, discount} = product;
+
   return (
     <li className="col-3 col-sm-6">
       <div className={discount ? "product product-sale" : "product"}>

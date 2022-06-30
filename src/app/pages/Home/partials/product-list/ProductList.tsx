@@ -3,7 +3,7 @@ import ProductItem from '../../../../components/partials/ProductItem';
 import Image from '../../../../../assets/images';
 import Button from '../../../../components/partials/Button';
 
-const PRODUCTS = [
+const productList = [
   {
     id: '1',
     name: 'T-Shirt Summer Vibes',
@@ -46,21 +46,18 @@ const ProductList: React.FC<IProductListProps> = ({ title, button }) => {
         {button ? (
           <div className="section-header">
             <h3 className="txt-title section-title">{title}</h3>
-            <Button name="show more" type="border" />
+            <Button title="show more" type="border" />
           </div>
         ) : (
           <h3 className="txt-title section-title">{title}</h3>
         )}
         <div className="section-content">
           <ul className="row">
-            {PRODUCTS.map((product) => {
+            {productList.map((product) => {
               return (
                 <ProductItem
                   key={product.id}
-                  name={product.name}
-                  image={product.image}
-                  price={product.price}
-                  discount={product.discount}
+                  product={product}
                 />
               );
             })}

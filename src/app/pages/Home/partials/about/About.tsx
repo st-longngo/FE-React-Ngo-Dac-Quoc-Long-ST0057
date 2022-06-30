@@ -7,7 +7,7 @@ const dataAbout = [
     classCol: 'col-6 col-sm-12',
     classIndex: 'about-item-1',
     button: {
-      name: 'Show Collection',
+      title: 'Show Collection',
       type: 'primary',
       typeSection: 'about',
     },
@@ -17,7 +17,7 @@ const dataAbout = [
     classCol: 'col-3 col-sm-6',
     classIndex: 'about-item-2',
     button: {
-      name: 'More Details',
+      title: 'More Details',
       type: 'primary',
       typeSection: 'about',
     },
@@ -27,7 +27,7 @@ const dataAbout = [
     classCol: 'col-3 col-sm-6',
     classIndex: 'about-item-3',
     button: {
-      name: 'View All',
+      title: 'View All',
       type: 'primary',
       typeSection: 'about',
     },

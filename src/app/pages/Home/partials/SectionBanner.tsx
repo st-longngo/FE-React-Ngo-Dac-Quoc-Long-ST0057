@@ -2,6 +2,7 @@ import React from 'react';
 import Image from '../../../../assets/images';
 import Icon from '../../../../assets/icon';
 import PolicyItem from './PolicyItem';
+import { Link } from 'react-router-dom';
 
 const dataPolicy = [
   {
@@ -29,12 +30,12 @@ const Banner = () => {
           <h2 className="txt-bold banner-title">
             Sale of the<span>summer</span>collection
           </h2>
-          <a href="#" className="banner-link">
+          <Link to="/" className="banner-link">
             <div className="banner-link-icon">
               <img src={Image.ArrowLeft} alt="arrow left" />
             </div>
             <span className="typo-1 txt-bold banner-link-text">shop now</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="banner-policy">

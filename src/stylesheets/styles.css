@@ -405,12 +405,13 @@ h3 {
   }
 }
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 10;
   padding: 50px 0;
+  background-color: #000;
 }
 .header-inner {
   display: flex;

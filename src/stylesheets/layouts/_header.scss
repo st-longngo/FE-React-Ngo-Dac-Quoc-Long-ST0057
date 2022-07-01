@@ -1,6 +1,7 @@
 .header {
-  @include position(absolute, 0, 0, null, 0, 10);
+  @include position(fixed, 0, 0, null, 0, 10);
   padding: 50px 0;
+  background-color: #000;
   &-inner {
     @include flex($content: space-between, $items: center);
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface ILinkProps {
   title: string,
@@ -6,12 +7,12 @@ interface ILinkProps {
   path: string
 }
 
-const Link: React.FC<ILinkProps> = ({ title, customClass, path }) => {
+const ButtonLink: React.FC<ILinkProps> = ({ title, customClass, path }) => {
   return (
-    <a href={path} className={customClass}>
+    <Link to={path} className={customClass}>
       {title}
-    </a>
+    </Link>
   )
 }
 
-export default Link;
+export default ButtonLink;

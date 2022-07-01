@@ -8,21 +8,16 @@ import SectionChooseus from './partials/SectionChooseus';
 import SectionSelected from './partials/SectionSelected';
 import SectionToday from './partials/SectionToday';
 
-
 const Home = () => {
   return (
-    <>
-      <Header />
-      <main className="home-page">
-        <Banner />
-        <SectionAbout />
-        <SectionSelected />
-        <SectionChooseus/>
-        <SectionToday />
-        <Contact/>
-      </main>
-      <Footer />
-    </>
+    <main className="home-page">
+      <Banner />
+      <SectionAbout />
+      <SectionSelected />
+      <SectionChooseus/>
+      <SectionToday />
+      <Contact/>
+    </main>
   );
 };
 

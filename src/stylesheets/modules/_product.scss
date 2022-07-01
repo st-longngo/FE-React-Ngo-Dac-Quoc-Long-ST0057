@@ -1,0 +1,73 @@
+.product {
+  position: relative;
+  &-thumnail {
+    position: relative;
+    &:hover {
+      .product-cart {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &-link {
+    display: block;
+  }
+  &-image {
+    @include size(100%, 100%);
+    display: block;
+    object-fit: cover;
+  }
+  &-cart {
+    @include position(absolute, 0, 0, 0, 0);
+    @include flex($content: center, $items: flex-end);
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s linear;
+  }
+  &-content {
+    padding: 16px 0;
+  }
+  &-price {
+    @include flex($content: space-between, $items: center);
+    span {
+      font-size: map-get($font-size, 'md-3');
+      font-weight: map-get($font-weight, 'regular');
+    }
+  }
+  &-sale {
+    .badge {
+      @include position($namePosition: absolute, $top: 24px, $left: 18px, $zIndex: 3);
+    }
+    .product-price {
+      span {
+        color: map-get($color, secondary);
+      }
+      .product-discount {
+        color: map-get($color, 'gray-2');
+      }
+    }
+  }
+}
+
+@include maxWidth($mobile) {
+  .product {
+    margin-bottom: 12px;
+    &-image {
+      min-height: 227px;
+    }
+    &-content {
+      padding: 4px 0;
+    }
+    &-price {
+      span {
+        font-size: map-get($font-size, '2xs');
+      }
+    }
+    &-badge {
+      top: 14px;
+      left: 8px;
+    }
+  }
+}

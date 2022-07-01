@@ -1,6 +1,6 @@
 import React from 'react';
-import Badge from './../../../../shared/components/partials/Badge';
-import Button from '../../../../shared/components/partials/Link';
+import Badge from './../../../shared/components/partials/Badge';
+import Button from './../../../shared/components/partials/Button';
 
 interface IAboutItemProps {
   title: string;

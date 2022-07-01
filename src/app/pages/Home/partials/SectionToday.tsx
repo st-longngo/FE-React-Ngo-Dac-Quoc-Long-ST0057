@@ -1,6 +1,7 @@
 import React from 'react';
-import Image from '../../../../../assets/images';
-import ProductList from '../../../../shared/components/partials/ProductList';
+import Image from '../../../../assets/images';
+import ProductList from './ProductList';
+import SectionTitle from '../../../shared/components/partials/SectionTitle';
 
 const productList = [
   {
@@ -33,10 +34,17 @@ const productList = [
   },
 ];
 
-const ProductSelected = () => {
+const SectionToday = () => {
   return (
-    <ProductList productList={productList} title="Selected just for you" hasButton={true}/>
+    <section className="section section-product-selected">
+      <div className="container">
+        <SectionTitle title='Products in today' hasButton={false}/>
+        <div className="section-content">
+          <ProductList productList={productList}/>
+        </div>
+      </div>
+    </section>
   )
 }
 
-export default ProductSelected;
+export default SectionToday;

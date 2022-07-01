@@ -6,6 +6,9 @@
       .section-title {
         margin-bottom: 0;
       }
+      &.section-center {
+        justify-content: center;
+      }
     }
     &-banner {
       position: relative;

@@ -1,7 +1,21 @@
-import React from 'react';
-import AboutItem from './AboutItem';
+import React from "react";
+import AboutList from "./AboutList";
 
-const dataAbout = [
+interface IAboutItem {
+  title: string;
+  classCol: string;
+  classIndex: string;
+  link: {
+    title: string;
+    customClass: string;
+  };
+  badge?: {
+    discount: number;
+    type: string;
+  };
+}
+
+const dataAbout: IAboutItem[] = [
   {
     title: 'New arrivalsare now in!',
     classCol: 'col-6 col-sm-12',
@@ -18,7 +32,7 @@ const dataAbout = [
     link: {
       title: 'More Details',
       customClass: 'btn-primary btn-about'
-    },
+    }
   },
   {
     title: 'Sale this summer',
@@ -30,32 +44,19 @@ const dataAbout = [
     },
     badge: {
       discount: 50,
-      type: 'primary',
-    },
-  },
+      type: 'primary'
+    }
+  }
 ];
 
-const About = () => {
+const SectionAbout = () => {
   return (
     <section className="section section-about">
       <div className="container">
-        <ul className="row">
-          {dataAbout.map((item, idx) => {
-            return (
-              <AboutItem
-                key={idx}
-                title={item.title}
-                classCol={item.classCol}
-                classIndex={item.classIndex}
-                link={item.link}
-                badge={item.badge}
-              />
-            );
-          })}
-        </ul>
+        <AboutList dataAbout={dataAbout}/>
       </div>
     </section>
   );
 };
 
-export default About;
+export default SectionAbout;

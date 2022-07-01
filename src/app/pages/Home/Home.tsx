@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../../shared/components/layout/Header';
-import Banner from '../../shared/components/layout/Banner';
+import Banner from './partials/SectionBanner';
 import Footer from '../../shared/components/layout/Footer';
-import About from './partials/about/About';
-import Chooseus from './partials/chooseus/Chooseus';
-import Contact from './partials/contact/Contact';
-import ProductSelected from './partials/product/ProductSelected';
-import ProductToday from './partials/product/ProductToday';
+import Contact from './partials/SectionContact';
+import SectionAbout from './partials/SectionAbout';
+import SectionChooseus from './partials/SectionChooseus';
+import SectionSelected from './partials/SectionSelected';
+import SectionToday from './partials/SectionToday';
+
 
 const Home = () => {
   return (
@@ -14,10 +15,10 @@ const Home = () => {
       <Header />
       <main className="home-page">
         <Banner />
-        <About />
-        <ProductSelected />
-        <Chooseus/>
-        <ProductToday />
+        <SectionAbout />
+        <SectionSelected />
+        <SectionChooseus/>
+        <SectionToday />
         <Contact/>
       </main>
       <Footer />

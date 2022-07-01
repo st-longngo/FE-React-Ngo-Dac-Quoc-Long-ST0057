@@ -1,7 +1,7 @@
 import React from 'react';
-import { IProduct } from '../../interfaces/product';
-import Badge from './Badge';
-import Button from './Button';
+import { IProduct } from './../../../shared/interfaces/product';
+import Badge from './../../../shared/components/partials/Badge';
+import Button from './../../../shared/components/partials/Button';
 
 interface IProductItemProps {
   product: IProduct

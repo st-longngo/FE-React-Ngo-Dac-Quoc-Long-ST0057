@@ -1,15 +1,10 @@
 import React from 'react';
+import { IProduct } from '../../interfaces/product';
 import Badge from './Badge';
 import Button from './Button';
 
 interface IProductItemProps {
-  product: {
-    id: string;
-    name: string;
-    image: string;
-    price: number;
-    discount: number;
-  };
+  product: IProduct
 }
 
 interface IProductDiscountProps {

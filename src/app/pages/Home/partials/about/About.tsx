@@ -6,30 +6,27 @@ const dataAbout = [
     title: 'New arrivalsare now in!',
     classCol: 'col-6 col-sm-12',
     classIndex: 'about-item-1',
-    button: {
+    link: {
       title: 'Show Collection',
-      type: 'primary',
-      typeSection: 'about',
+      customClass: 'btn-primary btn-about'
     },
   },
   {
     title: 'Basic t-shirts $29,99',
     classCol: 'col-3 col-sm-6',
     classIndex: 'about-item-2',
-    button: {
+    link: {
       title: 'More Details',
-      type: 'primary',
-      typeSection: 'about',
+      customClass: 'btn-primary btn-about'
     },
   },
   {
     title: 'Sale this summer',
     classCol: 'col-3 col-sm-6',
     classIndex: 'about-item-3',
-    button: {
+    link: {
       title: 'View All',
-      type: 'primary',
-      typeSection: 'about',
+      customClass: 'btn-primary btn-about'
     },
     badge: {
       discount: 50,
@@ -50,7 +47,7 @@ const About = () => {
                 title={item.title}
                 classCol={item.classCol}
                 classIndex={item.classIndex}
-                button={item.button}
+                link={item.link}
                 badge={item.badge}
               />
             );

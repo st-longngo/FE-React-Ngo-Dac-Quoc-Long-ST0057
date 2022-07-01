@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from './ProductItem';
-import Button from './Button';
+import Button from './Link';
 
 interface IProduct {
   id: string,
@@ -22,7 +22,7 @@ const ProductList: React.FC<IProductListProps> = ({ productList, title, hasButto
       <div className="container">
         <div className="section-header">
         <h3 className="txt-title section-title">{title}</h3>
-          {hasButton && <Button title="show more" type="border" />}
+          {hasButton && <Button title="show more" customClass='btn-border'/>}
           </div>
         <div className="section-content">
           <ul className="row">

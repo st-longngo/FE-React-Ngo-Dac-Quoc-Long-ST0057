@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../../shared/components/partials/Button';
 
 const Contact = () => {
   return (
@@ -17,9 +18,7 @@ const Contact = () => {
                 className="form-input"
                 placeholder="Enter you email"
               />
-              <button type="submit" className="btn btn-secondary form-submit">
-                SUBSCRIBE
-              </button>
+              <Button title="subscribe" customClass="btn-secondary form-submit"/>
             </form>
           </div>
         </div>

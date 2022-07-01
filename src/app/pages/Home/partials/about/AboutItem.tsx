@@ -1,15 +1,14 @@
 import React from 'react';
-import Badge from '../../../../components/partials/Badge';
-import Button from '../../../../components/partials/Button';
+import Badge from './../../../../shared/components/partials/Badge';
+import Button from '../../../../shared/components/partials/Link';
 
 interface IAboutItemProps {
   title: string;
   classCol: string;
   classIndex: string;
-  button: {
+  link: {
     title: string;
-    type: string;
-    typeSection: string;
+    customClass: string
   };
   badge?: {
     discount: number;
@@ -21,7 +20,7 @@ const AboutItem: React.FC<IAboutItemProps> = ({
   title,
   classCol,
   classIndex,
-  button,
+  link,
   badge,
 }) => {
   return (
@@ -36,9 +35,8 @@ const AboutItem: React.FC<IAboutItemProps> = ({
           <h4 className="typo-1 about-title">{title}</h4>
           <div className="about-link">
             <Button
-              title={button.title}
-              type={button.type}
-              typeSection={button.typeSection}
+              title={link.title}
+              customClass={link.customClass}
             />
           </div>
         </div>

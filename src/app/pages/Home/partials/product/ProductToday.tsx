@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '../../../../../assets/images';
-import ProductList from '../../../../components/partials/ProductList';
+import ProductList from '../../../../shared/components/partials/ProductList';
 
 const productList = [
   {
@@ -35,7 +35,7 @@ const productList = [
 
 const ProductToday = () => {
   return (
-    <ProductList productList={productList} title="Selected just for you" hasButton={true}/>
+    <ProductList productList={productList} title="Selected just for you" hasButton={false}/>
   )
 }
 

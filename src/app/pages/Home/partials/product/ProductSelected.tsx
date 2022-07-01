@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '../../../../../assets/images';
-import ProductList from '../../../../components/partials/ProductList';
+import ProductList from '../../../../shared/components/partials/ProductList';
 
 const productList = [
   {

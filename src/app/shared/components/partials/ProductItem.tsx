@@ -1,5 +1,6 @@
 import React from 'react';
 import Badge from './Badge';
+import Button from './Button';
 
 interface IProductItemProps {
   product: {
@@ -11,9 +12,25 @@ interface IProductItemProps {
   };
 }
 
+interface IProductDiscountProps {
+  price: number,
+  discount: number
+}
+
 const calPriceDiscount = (price: number, discount: number): string => {
   return (price - (price * discount) / 100).toFixed(2);
 };
+
+const ProductDiscount = ({price, discount}: IProductDiscountProps) => (
+  discount ? (
+    <>
+      <span>${calPriceDiscount(price, discount)}</span>
+      <span className="product-discount">${price}</span>
+    </>
+  ) : (
+    <span>${price}</span>
+  )
+)
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { name, image, price, discount } = product;
@@ -26,6 +43,9 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
           <a href="#" className="product-link">
             <img src={image} alt={name} className="product-image" />
           </a>
+          <div className="product-cart">
+              <Button title="add to cart" customClass="btn-secondary"/>
+          </div>
         </div>
         <div className="product-content">
           <h4 className="product-name">
@@ -34,16 +54,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             </a>
           </h4>
           <div className="product-price">
-            {
-              discount ? (
-                <>
-                  <span>${calPriceDiscount(price, discount)}</span>
-                  <span className="product-discount">${price}</span>
-                </>
-              ) : (
-                <span>${price}</span>
-              )
-            }
+            <ProductDiscount price={price} discount={discount}/>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = ({ title, customClass }) => {
   return (
-    <button className={customClass ? `btn ${customClass}`: 'btn'}>
+    <button className={customClass}>
       {title}
     </button>
   )

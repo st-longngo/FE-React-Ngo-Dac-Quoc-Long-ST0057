@@ -18,7 +18,7 @@ const Contact = () => {
                 className="form-input"
                 placeholder="Enter you email"
               />
-              <Button title="subscribe" customClass="btn-secondary form-submit"/>
+              <Button title="subscribe" customClass="btn btn-secondary form-submit"/>
             </form>
           </div>
         </div>

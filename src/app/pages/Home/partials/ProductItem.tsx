@@ -39,7 +39,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             <img src={image} alt={name} className="product-image" />
           </a>
           <div className="product-cart">
-              <Button title="add to cart" customClass="btn-secondary"/>
+              <Button title="add to cart" customClass="btn btn-secondary"/>
           </div>
         </div>
         <div className="product-content">

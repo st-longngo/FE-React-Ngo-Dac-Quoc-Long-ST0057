@@ -1,11 +1,10 @@
 import React from 'react';
-import Header from '../../shared/components/layout/Header';
-import Footer from '../../shared/components/layout/Footer';
+import SectionCart from './partials/SectionCart';
 
 const Cart = () => {
   return (
-    <main>
-      
+    <main className="store-page">
+      <SectionCart />
     </main>
   )
 }

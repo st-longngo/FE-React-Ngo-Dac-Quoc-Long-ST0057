@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../../shared/components/partials/Button';
 
-const Contact = () => {
+const SectionContact = () => {
   return (
     <section className="section-contact section">
       <div className="container">
@@ -27,4 +27,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default SectionContact;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { ICart } from '../../../shared/interfaces/cart';
-import CartItem from './CartItem';
 import Image from './../../../../assets/images/index';
+import { ICart } from '../../../shared/interfaces/cart';
 import ButtonLink from '../../../shared/components/partials/Link';
+import CartItem from './CartItem';
 
 interface ICartListProps {
   cart: ICart[];

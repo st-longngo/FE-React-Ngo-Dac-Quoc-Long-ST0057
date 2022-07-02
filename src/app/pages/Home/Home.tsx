@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from '../../shared/components/layout/Header';
-import Banner from './partials/SectionBanner';
-import Footer from '../../shared/components/layout/Footer';
-import Contact from './partials/SectionContact';
+import SectionBanner from './partials/SectionBanner';
+import SectionContact from './partials/SectionContact';
 import SectionAbout from './partials/SectionAbout';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionSelected from './partials/SectionSelected';
@@ -11,12 +9,12 @@ import SectionToday from './partials/SectionToday';
 const Home = () => {
   return (
     <main className="home-page">
-      <Banner />
+      <SectionBanner />
       <SectionAbout />
       <SectionSelected />
       <SectionChooseus/>
       <SectionToday />
-      <Contact/>
+      <SectionContact/>
     </main>
   );
 };

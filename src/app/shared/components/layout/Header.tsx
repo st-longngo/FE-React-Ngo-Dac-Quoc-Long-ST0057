@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from '../../../../assets/icon';
 import { Link } from 'react-router-dom';
+import Icon from '../../../../assets/icon';
 import { useGlobalContext } from '../../contexts/cart.context';
 import { ICart } from './../../interfaces/cart';
 

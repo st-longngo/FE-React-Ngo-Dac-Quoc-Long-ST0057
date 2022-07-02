@@ -1,11 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../../../shared/contexts/cart.context";
 import { IProduct } from "./../../../shared/interfaces/product";
+import { ICart } from "./../../../shared/interfaces/cart";
 import Badge from "./../../../shared/components/partials/Badge";
 import Button from "./../../../shared/components/partials/Button";
-import { Link } from "react-router-dom";
-import { productList } from "../../../shared/constant/product";
-import { ICart } from "./../../../shared/interfaces/cart";
-import { useGlobalContext } from "../../../shared/contexts/cart.context";
 
 interface IProductItemProps {
   product: IProduct;
@@ -45,7 +44,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
     }
     setCart([...cart]);
   };
-  
+
   return (
     <li className="col-3 col-sm-6">
       <div className={discount ? "product product-sale" : "product"}>

@@ -1,6 +1,6 @@
 import React from "react";
-import ChooseusItem from "./ChooseusItem";
 import { IChooseus } from "../../../shared/interfaces/chooseus";
+import ChooseusItem from "./ChooseusItem";
 import { chooseusList } from "../../../shared/constant/chooseus";
 
 const ChooseusList = () => {

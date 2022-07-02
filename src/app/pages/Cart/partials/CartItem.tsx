@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
-import { ICart } from './../../../shared/interfaces/cart';
+import React, { useState } from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
+import { ICart } from './../../../shared/interfaces/cart';
 interface ICartItemProps {
   cartItem: ICart;
 }

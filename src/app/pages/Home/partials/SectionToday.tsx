@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from '../../../../assets/images';
 import SectionTitle from '../../../shared/components/partials/SectionTitle';
 import ProductList from './ProductList';
 import { productList } from '../../../shared/constant/product';

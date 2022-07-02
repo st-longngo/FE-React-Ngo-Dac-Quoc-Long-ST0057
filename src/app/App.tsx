@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../stylesheets/styles.css";
-import Home from "./pages/Home/Home";
-import Cart from "./pages/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./shared/components/layout/Header";
-import Footer from "./shared/components/layout/Footer";
 import { MyGlobalContext } from "./shared/contexts/cart.context";
 import { ICart } from "./shared/interfaces/cart";
+import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
+import Header from "./shared/components/layout/Header";
+import Footer from "./shared/components/layout/Footer";
 import { getData, setData } from './shared/common/common';
 
 function App() {

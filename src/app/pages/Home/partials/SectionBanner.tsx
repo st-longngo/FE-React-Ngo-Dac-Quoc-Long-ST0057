@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PolicyItem from './PolicyItem';
 import Image from '../../../../assets/images';
 import Icon from '../../../../assets/icon';
-import PolicyItem from './PolicyItem';
-import { Link } from 'react-router-dom';
 
 const dataPolicy = [
   {
@@ -22,7 +22,7 @@ const dataPolicy = [
   },
 ];
 
-const Banner = () => {
+const SectionBanner = () => {
   return (
     <section className="section section-banner">
       <div className="container banner-inner">
@@ -56,4 +56,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default SectionBanner;

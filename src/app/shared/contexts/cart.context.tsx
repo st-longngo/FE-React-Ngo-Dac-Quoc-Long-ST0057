@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from "react";
-import { setData, getData } from "../common/common";
 import { ICart } from './../interfaces/cart';
+import { getData } from "../common/common";
 
 interface GlobalContent {
   cart: ICart[],
@@ -13,4 +13,3 @@ export const MyGlobalContext  = createContext<GlobalContent>({
 });
 
 export const useGlobalContext = () => useContext(MyGlobalContext);
-

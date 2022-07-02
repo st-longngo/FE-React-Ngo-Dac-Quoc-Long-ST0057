@@ -11,12 +11,12 @@ interface ICartListProps {
 const CartList = ({ cart }: ICartListProps) => {
   return (
     <ul className="cart-list">
-      <li className="cart-row">
+      <div className="cart-row">
         <span className="txt-bold cart-body">PRODUCT</span>
         <span className="txt-bold cart-buttons">QUANTITY</span>
         <span className="txt-center txt-bold cart-total">TOTAL</span>
         <span className="cart-close"></span>
-      </li>
+      </div>
       {cart.length ? (
         cart.map((cartItem) => <CartItem key={cartItem.id} cartItem={cartItem} />)
       ) : (

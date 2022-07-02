@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
 import { ICart } from './../../../shared/interfaces/cart';
+import Button from '../../../shared/components/partials/Button';
+
 interface ICartItemProps {
   cartItem: ICart;
 }
@@ -23,7 +25,7 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
         setQuantity(cartItem.quantity);
       },
       minus: (): void => {
-        if (cart[cartIndex].quantity - 1 > 0) {
+        if (cart[cartIndex].quantity > 1) {
           cart[cartIndex].quantity -= 1;
           setCart([...cart]);
           setQuantity(cartItem.quantity);
@@ -72,19 +74,13 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
           <span className="txt-regular cart-price">
             ${cartItem.price - (cartItem.price * cartItem.discount) / 100}
           </span>
-          {cartItem.discount && (
+          {cartItem.discount !== 0 && (
             <span className="txt-regular cart-discount">${cartItem.price}</span>
           )}
         </div>
       </div>
       <div className="cart-buttons">
-        <button
-          className="cart-btn"
-          id="minus"
-          onClick={() => changeQuantityOfCart("minus")}
-        >
-          <i className="bx bx-minus"></i>
-        </button>
+        <Button title="-" customClass="cart-btn" onClick={() => changeQuantityOfCart("minus")}/>
         <input
           type="text"
           className="cart-quantity"
@@ -92,22 +88,10 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
           onChange={handleChangeQuantity}
           onKeyDown={handleKeyUpQuantity}
         />
-        <button
-          className="cart-btn"
-          id="add"
-          onClick={() => changeQuantityOfCart("add")}
-        >
-          <i className="bx bx-plus"></i>
-        </button>
+        <Button title="+" customClass="cart-btn" onClick={() => changeQuantityOfCart("add")}/>
       </div>
       <p className="txt-center cart-total">${totalPriceOfCart()}</p>
-      <button
-        id="cart-close"
-        className="cart-btn cart-close"
-        onClick={() => deleteProductInCart()}
-      >
-        <i className="bx bx-x"></i>
-      </button>
+      <Button title="x" customClass="cart-btn cart-close" onClick={deleteProductInCart}/>
     </li>
   );
 };

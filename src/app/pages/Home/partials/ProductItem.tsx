@@ -35,20 +35,17 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { cart, setCart } = useGlobalContext();
 
   const addToCart = (product: IProduct): void => {
-    const newProduct: IProduct = productList.find(
-      (item: IProduct) => item.id === product.id
-    )!;
-    const productCart: ICart = cart.find(
+    const cartIndex: number = cart.findIndex(
       (item: ICart) => item.id === product.id
     )!;
-    if (!productCart) {
-      const newProductCart: ICart = { ...newProduct, quantity: 1 };
-      cart.push(newProductCart);
+    if (cartIndex < 0) {
+      cart.push({ ...product, quantity: 1 });
     } else {
-      cart[cart.indexOf(productCart)].quantity += 1;
+      cart[cartIndex].quantity += 1;
     }
     setCart([...cart]);
   };
+  
   return (
     <li className="col-3 col-sm-6">
       <div className={discount ? "product product-sale" : "product"}>

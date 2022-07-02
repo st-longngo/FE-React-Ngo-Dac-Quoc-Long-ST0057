@@ -1,19 +1,19 @@
 import React from 'react';
 import SectionBanner from './partials/SectionBanner';
-import SectionContact from './partials/SectionContact';
 import SectionAbout from './partials/SectionAbout';
+import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
-import SectionSelected from './partials/SectionSelected';
-import SectionToday from './partials/SectionToday';
+import SectionContact from './partials/SectionContact';
+import { productList } from '../../shared/constant/product';
 
 const Home = () => {
   return (
     <main className="home-page">
       <SectionBanner />
       <SectionAbout />
-      <SectionSelected />
+      <SectionProduct productList={productList} title='Selected just for you' hasButton={true} />
       <SectionChooseus/>
-      <SectionToday />
+      <SectionProduct productList={productList} title='Products in today' hasButton={false} />
       <SectionContact/>
     </main>
   );

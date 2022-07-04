@@ -7,12 +7,10 @@ interface ILinkProps {
   path: string
 }
 
-const ButtonLink: React.FC<ILinkProps> = ({ title, customClass, path }) => {
+export const ButtonLink: React.FC<ILinkProps> = ({ title, customClass, path }) => {
   return (
     <Link to={path} className={customClass}>
       {title}
     </Link>
   )
 }
-
-export default ButtonLink;

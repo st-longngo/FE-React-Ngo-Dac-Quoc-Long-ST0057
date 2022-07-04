@@ -3,31 +3,12 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../../shared/contexts/cart.context";
 import { IProduct } from "./../../../shared/interfaces/product";
 import { ICart } from "./../../../shared/interfaces/cart";
-import Badge from "./../../../shared/components/partials/Badge";
-import Button from "./../../../shared/components/partials/Button";
+import ProductDiscount from "./ProductDiscount";
+import { Badge, Button } from './../../../shared/components/partials/index';
 
 interface IProductItemProps {
   product: IProduct;
 }
-
-interface IProductDiscountProps {
-  price: number;
-  discount: number;
-}
-
-const calPriceDiscount = (price: number, discount: number): string => {
-  return (price - (price * discount) / 100).toFixed(2);
-};
-
-const ProductDiscount = ({ price, discount }: IProductDiscountProps) =>
-  discount ? (
-    <>
-      <span>${calPriceDiscount(price, discount)}</span>
-      <span className="product-discount">${price}</span>
-    </>
-  ) : (
-    <span>${price}</span>
-  );
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { name, image, price, discount } = product;

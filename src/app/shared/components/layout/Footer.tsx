@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../../assets/icon';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -138,5 +138,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

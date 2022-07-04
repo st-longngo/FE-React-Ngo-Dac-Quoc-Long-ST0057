@@ -3,12 +3,9 @@ import "../stylesheets/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MyGlobalContext } from "./shared/contexts/cart.context";
 import { ICart } from "./shared/interfaces/cart";
-import Home from "./pages/Home/Home";
-import Cart from "./pages/Cart/Cart";
-import Header from "./shared/components/layout/Header";
-import Footer from "./shared/components/layout/Footer";
+import { Home, Cart } from "./pages/index";
+import { Header, Footer } from './shared/components/layout/index';
 import { getData, setData } from './shared/common/common';
-
 function App() {
   const [cart, setCart] = useState<ICart[]>(getData('cart', []));
   

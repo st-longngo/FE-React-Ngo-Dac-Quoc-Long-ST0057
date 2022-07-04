@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
 import { ICart } from './../../../shared/interfaces/cart';
-import Button from '../../../shared/components/partials/Button';
+import { Button } from '../../../shared/components/partials/index';
 
 interface ICartItemProps {
   cartItem: ICart;

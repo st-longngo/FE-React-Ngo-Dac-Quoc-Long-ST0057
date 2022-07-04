@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../../shared/components/partials/Button';
+import { Button } from '../../../shared/components/partials/index';
 
 const SectionContact = () => {
   return (

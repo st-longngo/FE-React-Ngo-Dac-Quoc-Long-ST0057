@@ -4,7 +4,7 @@ import Icon from '../../../../assets/icon';
 import { useGlobalContext } from '../../contexts/cart.context';
 import { ICart } from './../../interfaces/cart';
 
-const Header = () => {
+export const Header = () => {
   const { cart, setCart } = useGlobalContext();
 
   const cartNumber = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
@@ -77,5 +77,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

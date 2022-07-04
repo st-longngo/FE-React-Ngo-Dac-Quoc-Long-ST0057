@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "../../../shared/components/partials/SectionTitle";
+import { SectionTitle } from "../../../shared/components/partials/index";
 import ChooseusList from "./ChooseusList";
 
 const SectionChooseus = () => {

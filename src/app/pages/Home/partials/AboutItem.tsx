@@ -1,7 +1,6 @@
 import React from 'react';
 import { IAbout } from '../../../shared/interfaces/about';
-import Badge from './../../../shared/components/partials/Badge';
-import Link from './../../../shared/components/partials/Link';
+import {Badge, ButtonLink} from './../../../shared/components/partials/index';
 
 const AboutItem: React.FC<IAbout> = ({
   title,
@@ -21,7 +20,7 @@ const AboutItem: React.FC<IAbout> = ({
           )}
           <h4 className="typo-1 about-title">{title}</h4>
           <div className="about-link">
-            <Link
+            <ButtonLink
               title={link.title}
               customClass={link.customClass}
               path={link.path}

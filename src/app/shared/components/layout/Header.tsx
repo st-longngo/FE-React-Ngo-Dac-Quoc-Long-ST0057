@@ -53,7 +53,7 @@ export const Header = () => {
               </Link>
             </li>
             <li className="extra-item">
-              <Link to="/" id="person" className="extra-link">
+              <Link to="/register" id="person" className="extra-link">
                 <img
                   src={Icon.Avatar}
                   alt="avatar"

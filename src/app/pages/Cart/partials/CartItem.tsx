@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
-import { ICart } from './../../../shared/interfaces/cart';
+import { ICart } from '../../../shared/interfaces/cart';
 import { Button } from '../../../shared/components/partials/index';
-import { formatFixed } from './../../../shared/common/common';
+import { formatFixed } from '../../../shared/common/common';
 
 interface ICartItemProps {
   cartItem: ICart;

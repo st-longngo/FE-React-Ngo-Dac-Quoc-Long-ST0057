@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatFixed } from './../../../shared/common/common';
+import { formatFixed } from '../../../shared/common/common';
 
 interface IProductDiscountProps {
   price: number;

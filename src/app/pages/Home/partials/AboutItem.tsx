@@ -1,6 +1,6 @@
 import React from 'react';
 import { IAbout } from '../../../shared/interfaces/about';
-import { Badge, ButtonLink } from './../../../shared/components/partials/index';
+import { Badge, ButtonLink } from '../../../shared/components/partials/index';
 
 interface IAboutItemProps {
   about: IAbout

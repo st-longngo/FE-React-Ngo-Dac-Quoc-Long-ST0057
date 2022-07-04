@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../../shared/contexts/cart.context";
-import { IProduct } from "./../../../shared/interfaces/product";
-import { ICart } from "./../../../shared/interfaces/cart";
+import { IProduct } from "../../../shared/interfaces/product";
+import { ICart } from "../../../shared/interfaces/cart";
 import ProductDiscount from "./ProductDiscount";
-import { Badge, Button } from './../../../shared/components/partials/index';
+import { Badge, Button } from '../../../shared/components/partials/index';
 
 interface IProductItemProps {
   product: IProduct;

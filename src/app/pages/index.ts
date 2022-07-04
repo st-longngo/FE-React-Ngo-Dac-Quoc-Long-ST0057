@@ -1,4 +1,4 @@
-import Home from './Home/Home';
-import Cart from './Cart/Cart';
+import Home from './home/Home';
+import Cart from './cart/Cart';
 
 export { Home, Cart };

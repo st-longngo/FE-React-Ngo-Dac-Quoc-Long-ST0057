@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChooseus } from './../../../shared/interfaces/chooseus';
+import { IChooseus } from '../../../shared/interfaces/chooseus';
 
 interface IChooseusItemProps {
   chooseus: IChooseus

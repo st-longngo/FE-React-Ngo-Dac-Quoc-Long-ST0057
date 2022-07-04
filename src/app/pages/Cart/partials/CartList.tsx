@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from './../../../../assets/images/index';
+import Image from '../../../../assets/images/index';
 import { ICart } from '../../../shared/interfaces/cart';
 import { ButtonLink } from '../../../shared/components/partials/index';
 import CartItem from './CartItem';

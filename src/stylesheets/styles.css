@@ -404,6 +404,36 @@ h3 {
     font-size: 12px;
   }
 }
+.form {
+  max-width: 670px;
+  margin: 175px auto;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-size: 18px;
+  color: #333333;
+}
+.form-detail {
+  padding: 30px 45px;
+}
+.form-title {
+  position: relative;
+  padding: 3px 0 20px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.form-title::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  background-color: #fbb03b;
+  transform: translateX(-50%);
+}
+
 .header {
   position: fixed;
   top: 0;

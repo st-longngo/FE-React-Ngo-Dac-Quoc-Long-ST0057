@@ -1,7 +1,7 @@
 import React from 'react';
-import { IProduct } from './../../../shared/interfaces/product';
+import { IProduct } from '../../../shared/interfaces/product';
 import ProductList from './ProductList';
-import { SectionTitle } from './../../../shared/components/partials/index';
+import { SectionTitle } from '../../../shared/components/partials/index';
 
 interface ISectionProductProps {
   productList: IProduct[];

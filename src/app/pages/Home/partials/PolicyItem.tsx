@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPolicy } from './../../../shared/interfaces/policy';
+import { IPolicy } from '../../../shared/interfaces/policy';
 
 interface IPolicyProps {
   policy: IPolicy

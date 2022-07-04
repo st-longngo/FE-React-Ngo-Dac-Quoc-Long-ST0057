@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICart } from './../../../shared/interfaces/cart';
+import { ICart } from '../../../shared/interfaces/cart';
 
 interface ITotalItemProps  {
   item: ICart

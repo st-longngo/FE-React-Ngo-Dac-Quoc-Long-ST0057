@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../contexts/cart.context';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {
-  const { cart, setCart } = useGlobalContext();
+  const { cart } = useGlobalContext();
 
   const cartNumber = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
   return (

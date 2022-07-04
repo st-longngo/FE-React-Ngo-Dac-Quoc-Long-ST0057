@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 interface ISectionTitleProps {
   title: string,
-  hasButton: boolean
+  hasButton?: boolean
 }
 
 export const SectionTitle: React.FC<ISectionTitleProps> = ({ title, hasButton }) => {

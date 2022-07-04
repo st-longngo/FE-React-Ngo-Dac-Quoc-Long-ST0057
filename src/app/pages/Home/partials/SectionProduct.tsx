@@ -6,7 +6,7 @@ import { SectionTitle } from './../../../shared/components/partials/index';
 interface ISectionProductProps {
   productList: IProduct[];
   title: string;
-  hasButton: boolean;
+  hasButton?: boolean;
 }
 
 const SectionProduct = ({ productList, title, hasButton}: ISectionProductProps) => {

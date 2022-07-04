@@ -10,6 +10,7 @@ interface ICartItemProps {
 interface changeCart {
   add: () => void;
   minus: () => void;
+  change: () => void;
 }
 
 const CartItem = ({ cartItem }: ICartItemProps) => {

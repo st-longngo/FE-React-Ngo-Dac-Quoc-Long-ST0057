@@ -3,7 +3,7 @@ import "../stylesheets/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MyGlobalContext } from "./shared/contexts/cart.context";
 import { ICart } from "./shared/interfaces/cart";
-import { Home, Cart } from "./pages/index";
+import { Home, Cart, Register } from "./pages/index";
 import { Header, Footer } from './shared/components/layout/index';
 import { getData, setData } from './shared/common/common';
 
@@ -27,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path='/register' element={<Register />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,8 +1,13 @@
 import React from 'react';
-import { IChooseus } from './../../../shared/interfaces/chooseus';
+import { IChooseus } from '../../../shared/interfaces/chooseus';
 
+interface IChooseusItemProps {
+  chooseus: IChooseus
+}
 
-const ChooseusItem: React.FC<IChooseus> = ({ name, icon, desc }) => {
+const ChooseusItem: React.FC<IChooseusItemProps> = ({ chooseus }) => {
+  const { name, icon, desc } = chooseus;
+
   return (
     <li className="col-3 col-sm-12">
       <div className="chooseus">

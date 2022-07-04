@@ -1,45 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '../../../../assets/icon';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
         <div className="container">
           <div className="row footer-list">
             <div className="col-5 col-sm-12 footer-iso">
-              <a href="#" className="footer-logo">
+              <Link to="/" className="footer-logo">
                 <img src={Icon.Logo} alt="E-Shop" />
-              </a>
+              </Link>
               <p className="footer-desc">
                 House My Brand designs clothing for the young, the old &everyone
                 in between – but most importantly, for the fashionable
               </p>
               <ul className="footer-social">
                 <li className="footer-social-item">
-                  <a href="#" className="footer-social-link">
+                  <Link to="/" className="footer-social-link">
                     <i className="bx bxl-facebook"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer-social-item">
-                  <a href="#" className="footer-social-link">
+                  <Link to="/" className="footer-social-link">
                     <i className="bx bxl-twitter"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer-social-item">
-                  <a href="#" className="footer-social-link">
+                  <Link to="/" className="footer-social-link">
                     <i className="bx bxl-linkedin"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer-social-item">
-                  <a href="#" className="footer-social-link">
+                  <Link to="/" className="footer-social-link">
                     <i className="bx bxl-instagram"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer-social-item">
-                  <a href="#" className="footer-social-link">
+                  <Link to="/" className="footer-social-link">
                     <i className="bx bxl-youtube"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -50,29 +51,29 @@ const Footer = () => {
                     <span className="sub-title">Shopping online</span>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Order Status
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Shipping and Delivery
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Returns
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Payment Options
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -82,29 +83,29 @@ const Footer = () => {
                     <span className="sub-title">Information</span>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Gift Cards
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Find a store
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Newsletter
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Bacome a member
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link sub-link">
+                    <Link to="/" className="footer-sub-link sub-link">
                       Site feedback
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -114,14 +115,14 @@ const Footer = () => {
                     <span className="sub-title">Contact</span>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link">
+                    <Link to="#" className="footer-sub-link">
                       store@uikit.com
-                    </a>
+                    </Link>
                   </li>
                   <li className="footer-sub-item">
-                    <a href="#" className="footer-sub-link">
+                    <Link to="/" className="footer-sub-link">
                       Hotline: +1 131 138 138
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -137,5 +138,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

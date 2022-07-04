@@ -29,5 +29,4 @@ const Icon = {
   Search
 }
 
-
 export default Icon;

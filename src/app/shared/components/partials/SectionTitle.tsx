@@ -12,5 +12,5 @@ export const SectionTitle: React.FC<ISectionTitleProps> = ({ title, hasButton })
       <h3 className="txt-title section-title">{title}</h3>
       {hasButton && <Button title="show more" customClass="btn btn-border"/>}
     </div>
-  )
-}
+  );
+};

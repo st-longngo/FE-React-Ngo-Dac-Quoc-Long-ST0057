@@ -11,5 +11,5 @@ export const Button: React.FC<IButtonProps> = ({ title, customClass, onClick }) 
     <button className={customClass} onClick={onClick}>
       {title}
     </button>
-  )
-}
+  );
+};

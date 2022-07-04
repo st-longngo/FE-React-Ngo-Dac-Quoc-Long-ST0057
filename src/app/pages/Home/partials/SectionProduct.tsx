@@ -19,7 +19,7 @@ const SectionProduct = ({ productList, title, hasButton}: ISectionProductProps) 
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default SectionProduct;

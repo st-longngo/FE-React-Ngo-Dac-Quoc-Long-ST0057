@@ -12,5 +12,5 @@ export const ButtonLink: React.FC<ILinkProps> = ({ title, customClass, path }) =
     <Link to={path} className={customClass}>
       {title}
     </Link>
-  )
-}
+  );
+};

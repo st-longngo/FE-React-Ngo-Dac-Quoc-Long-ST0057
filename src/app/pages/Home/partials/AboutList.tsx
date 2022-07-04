@@ -10,11 +10,7 @@ const AboutList = () => {
         return (
           <AboutItem
             key={idx}
-            title={about.title}
-            classCol={about.classCol}
-            classIndex={about.classIndex}
-            link={about.link}
-            badge={about.badge}
+            about={about}
           />
         );
       })}

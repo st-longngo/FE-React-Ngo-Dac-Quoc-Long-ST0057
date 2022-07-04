@@ -10,9 +10,7 @@ const ChooseusList = () => {
         return (
           <ChooseusItem
             key={idx}
-            name={chooseus.name}
-            icon={chooseus.icon}
-            desc={chooseus.desc}
+            chooseus={chooseus}
           />
         );
       })}

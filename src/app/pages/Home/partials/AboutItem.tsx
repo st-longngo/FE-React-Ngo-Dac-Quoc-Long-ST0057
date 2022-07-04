@@ -1,14 +1,14 @@
 import React from 'react';
 import { IAbout } from '../../../shared/interfaces/about';
-import {Badge, ButtonLink} from './../../../shared/components/partials/index';
+import { Badge, ButtonLink } from './../../../shared/components/partials/index';
 
-const AboutItem: React.FC<IAbout> = ({
-  title,
-  classCol,
-  classIndex,
-  link,
-  badge,
-}) => {
+interface IAboutItemProps {
+  about: IAbout
+}
+
+const AboutItem: React.FC<IAboutItemProps> = ({ about }) => {
+  const { title, classCol, classIndex, link, badge } = about;
+
   return (
     <li className={classCol}>
       <div className={classIndex ? `about ${classIndex}` : "about"}>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
 import { ICart } from './../../../shared/interfaces/cart';
 import { Button } from '../../../shared/components/partials/index';
+import { formatFixed } from './../../../shared/common/common';
 
 interface ICartItemProps {
   cartItem: ICart;
@@ -51,7 +52,7 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
   };
 
   const totalPriceOfCart = (): string => {
-    return ((cartItem.price - (cartItem.price * cartItem.discount) / 100) * cartItem.quantity).toFixed(2);
+    return formatFixed((cartItem.price - (cartItem.price * cartItem.discount) / 100) * cartItem.quantity);
   };
 
   const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {

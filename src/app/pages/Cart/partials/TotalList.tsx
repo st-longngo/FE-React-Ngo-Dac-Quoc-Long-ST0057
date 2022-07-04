@@ -9,7 +9,11 @@ interface ITotalListProps {
 const TotalList = ({ cart }: ITotalListProps) => {
   return (
     <ul className="order-list">
-      {cart.length ? cart.map((item) => <TotalItem key={item.id} item={item} />) : <li>Không có sản phẩm trong giỏ hàng</li>}
+      {cart.length ? (
+        cart.map((item) => <TotalItem key={item.id} item={item} />)
+      ) : (
+        <li>Không có sản phẩm trong giỏ hàng</li>
+      )}
     </ul>
   );
 };

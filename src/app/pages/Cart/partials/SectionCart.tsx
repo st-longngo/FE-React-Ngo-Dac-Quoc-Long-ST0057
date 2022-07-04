@@ -2,16 +2,18 @@ import React from 'react';
 import { useGlobalContext } from '../../../shared/contexts/cart.context';
 import CartList from './CartList';
 import TotalList from './TotalList';
+import { formatFixed } from '../../../shared/common/common';
 
 const SectionCart = () => {
   const { cart } = useGlobalContext();
 
-  const totalPrice = (): string => {
-    return cart.reduce(
+  const totalPrice = formatFixed(
+    cart.reduce(
       (acc, item) =>
-        acc + (item.price - (item.price * item.discount) / 100) * item.quantity
-      ,0).toFixed(2);
-  };
+        acc + (item.price - (item.price * item.discount) / 100) * item.quantity,
+      0
+    )
+  );
 
   return (
     <section className="section section-store">
@@ -26,9 +28,7 @@ const SectionCart = () => {
             <TotalList cart={cart} />
             <div className="order-total">
               <p className="txt-bold">TOTAL PRICE</p>
-              <span className="total">
-                ${totalPrice()}
-              </span>
+              <span className="total">${totalPrice}</span>
             </div>
           </div>
         </div>

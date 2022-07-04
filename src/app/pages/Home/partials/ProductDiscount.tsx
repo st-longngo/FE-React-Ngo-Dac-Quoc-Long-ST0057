@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatFixed } from './../../../shared/common/common';
 
 interface IProductDiscountProps {
   price: number;
@@ -6,7 +7,7 @@ interface IProductDiscountProps {
 }
 
 const ProductDiscount = ({price, discount}: IProductDiscountProps) => {
-  const priceDiscount = (price - (price * discount) / 100).toFixed(2);
+  const priceDiscount = formatFixed(price - (price * discount) / 100);
 
   return (
     discount ? (

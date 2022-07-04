@@ -1,26 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PolicyItem from './PolicyItem';
+import PolicyList from './PolicyList';
 import Image from '../../../../assets/images';
-import Icon from '../../../../assets/icon';
-
-const dataPolicy = [
-  {
-    title: 'Free Shipping',
-    icon: Icon.FreeShippingSmall,
-    description: 'On purchase over $199',
-  },
-  {
-    title: '99% Satisfied Customers',
-    icon: Icon.Happy,
-    description: 'On purchase over $199',
-  },
-  {
-    title: 'Originality Guaranteed',
-    icon: Icon.GruanranteeSmall,
-    description: '30 days warranty for each product from our store',
-  },
-];
 
 const SectionBanner = () => {
   return (
@@ -39,18 +20,7 @@ const SectionBanner = () => {
         </div>
       </div>
       <div className="banner-policy">
-        <ul className="policy-list">
-          {dataPolicy.map((item, idx) => {
-            return (
-              <PolicyItem
-                key={idx}
-                title={item.title}
-                icon={item.icon}
-                desc={item.description}
-              />
-            );
-          })}
-        </ul>
+        <PolicyList />
       </div>
     </section>
   );

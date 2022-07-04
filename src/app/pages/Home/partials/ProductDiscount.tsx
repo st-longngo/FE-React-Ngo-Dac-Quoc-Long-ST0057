@@ -5,7 +5,6 @@ interface IProductDiscountProps {
   discount: number;
 }
 
-
 const ProductDiscount = ({price, discount}: IProductDiscountProps) => {
   const priceDiscount = (price - (price * discount) / 100).toFixed(2);
 

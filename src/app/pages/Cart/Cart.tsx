@@ -6,7 +6,7 @@ const Cart = () => {
     <main className="store-page">
       <SectionCart />
     </main>
-  )
-}
+  );
+};
 
 export default Cart;

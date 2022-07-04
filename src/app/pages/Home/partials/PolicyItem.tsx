@@ -1,12 +1,13 @@
 import React from 'react';
+import { IPolicy } from './../../../shared/interfaces/policy';
 
 interface IPolicyProps {
-  title: string;
-  icon: string;
-  desc: string;
+  policy: IPolicy
 }
 
-const PolicyItem: React.FC<IPolicyProps> = ({ title, icon, desc }) => {
+const PolicyItem: React.FC<IPolicyProps> = ({ policy }) => {
+  const { title, icon, desc } = policy;
+
   return (
     <li className="policy-item">
       <div className="policy-icon">

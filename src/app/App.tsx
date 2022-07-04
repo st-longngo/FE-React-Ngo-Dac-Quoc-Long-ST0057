@@ -6,6 +6,7 @@ import { ICart } from "./shared/interfaces/cart";
 import { Home, Cart } from "./pages/index";
 import { Header, Footer } from './shared/components/layout/index';
 import { getData, setData } from './shared/common/common';
+
 function App() {
   const [cart, setCart] = useState<ICart[]>(getData('cart', []));
   

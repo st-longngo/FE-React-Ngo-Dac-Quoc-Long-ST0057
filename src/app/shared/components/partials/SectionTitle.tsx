@@ -10,7 +10,7 @@ const SectionTitle = ({ title, hasButton }: ISectionTitleProps) => {
   return (
     <div className={!hasButton ? 'section-header section-center': 'section-header'}>
       <h3 className="txt-title section-title">{title}</h3>
-      {hasButton && <Button title="show more" customClass='btn btn-border'/>}
+      {hasButton && <Button title="show more" customClass="btn btn-border"/>}
     </div>
   )
 }

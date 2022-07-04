@@ -16,11 +16,11 @@ function App() {
     if (!getData('cart', null)) {
       setData('cart', []);
     }
-  },[])
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  },[cart])
+    setData('cart', cart);
+  }, [cart]);
 
   return (
     <MyGlobalContext.Provider value={{cart, setCart}}>

@@ -11,9 +11,9 @@ const Home = () => {
     <main className="home-page">
       <SectionBanner />
       <SectionAbout />
-      <SectionProduct productList={productList} title='Selected just for you' hasButton={true} />
+      <SectionProduct productList={productList} title="Selected just for you" hasButton={true} />
       <SectionChooseus/>
-      <SectionProduct productList={productList} title='Products in today' hasButton={false} />
+      <SectionProduct productList={productList} title="Products in today" hasButton={false} />
       <SectionContact/>
     </main>
   );

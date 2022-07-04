@@ -6,10 +6,11 @@ import { ICart } from "./shared/interfaces/cart";
 import { Home, Cart, Register } from "./pages/index";
 import { Header, Footer } from './shared/components/layout/index';
 import { getData, setData } from './shared/common/common';
+import { IForm } from './shared/interfaces/form';
 
 function App() {
   const [cart, setCart] = useState<ICart[]>(getData('cart', []));
-  
+  const [user, setUser] = useState<IForm>({email: '', password: '', confirmPassword: ''})
   useEffect(() => {
     if (!getData('cart', null)) {
       setData('cart', []);
@@ -21,7 +22,7 @@ function App() {
   }, [cart]);
 
   return (
-    <MyGlobalContext.Provider value={{cart, setCart}}>
+    <MyGlobalContext.Provider value={{cart, setCart, user, setUser}}>
       <BrowserRouter>
         <Header />
         <Routes>

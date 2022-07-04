@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../contexts/cart.context';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {
-  const { cart } = useGlobalContext();
+  const { cart, user } = useGlobalContext();
 
   const cartNumber = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
   return (
@@ -61,6 +61,10 @@ export const Header = () => {
                 />
               </Link>
             </li>
+            {user.email && 
+            <li className="extra-item">
+              <p>{user.email}</p>
+            </li>}
             <li className="extra-item">
               <button className="extra-control">
                 <img

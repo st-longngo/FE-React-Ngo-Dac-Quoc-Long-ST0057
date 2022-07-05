@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Icon from '../../../../assets/icon';
-import { useGlobalContext } from '../../contexts/cart.context';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {
-  const { cart } = useGlobalContext();
+  const { cart } = useSelector((state: any) => state.cartReducer);
 
   const cartNumber = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useGlobalContext } from '../../../shared/contexts/cart.context';
+import { useDispatch } from 'react-redux';
+import { decreseQuantityCart, increseQuantityCart, deleteCart } from './../cart.actions';
 import { ICart } from '../../../shared/interfaces/cart';
 import { Button } from '../../../shared/components/partials/index';
 import { formatFixed } from '../../../shared/common/common';
@@ -11,44 +12,27 @@ interface ICartItemProps {
 interface changeCart {
   add: () => void;
   minus: () => void;
-  change: () => void;
 }
 
 const CartItem = ({ cartItem }: ICartItemProps) => {
-  const { cart, setCart } = useGlobalContext();
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState<number>(cartItem.quantity);
-
   const changeQuantityOfCart = (action: string) => {
-    const cartIndex: number = cart.findIndex((item) => item.id === cartItem.id);
     const changeCart = {
       add: (): void => {
-        cart[cartIndex].quantity += 1;
-        setCart([...cart]);
+        dispatch(increseQuantityCart(cartItem));
         setQuantity(cartItem.quantity);
       },
       minus: (): void => {
-        if (cart[cartIndex].quantity > 1) {
-          cart[cartIndex].quantity -= 1;
-          setCart([...cart]);
-          setQuantity(cartItem.quantity);
-        } else {
-          setCart([...cart.filter((item) => item.id !== cartItem.id)]);
-        }
-      },
-      change: (): void => {
-        if(quantity) {
-          cart[cartIndex].quantity = quantity;
-          setCart([...cart]);
-        } else {
-          setCart([...cart.filter((item) => item.id !== cartItem.id)]);
-        }
+        dispatch(decreseQuantityCart(cartItem));
+        setQuantity(cartItem.quantity);
       }
     };
     changeCart[action as keyof changeCart]();
   };
 
   const deleteProductInCart = () => {
-    setCart([...cart.filter((item) => item.id !== cartItem.id)]);
+    dispatch(deleteCart(cartItem.id));
   };
 
   const totalPriceOfCart = (): string => {
@@ -88,7 +72,6 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
           className="cart-quantity"
           value={quantity}
           onChange={handleChangeQuantity}
-          onKeyDown={handleKeyUpQuantity}
         />
         <Button title="+" customClass="cart-btn" onClick={() => changeQuantityOfCart("add")}/>
       </div>

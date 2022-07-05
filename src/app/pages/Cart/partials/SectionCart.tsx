@@ -1,15 +1,16 @@
 import React from 'react';
-import { useGlobalContext } from '../../../shared/contexts/cart.context';
+import { useSelector } from 'react-redux';
 import CartList from './CartList';
 import TotalList from './TotalList';
+import { ICart } from './../../../shared/interfaces/cart';
 import { formatFixed } from '../../../shared/common/common';
 
 const SectionCart = () => {
-  const { cart } = useGlobalContext();
+  const { cart } = useSelector((state: any) => state.cartReducer);
 
   const totalPrice = formatFixed(
     cart.reduce(
-      (acc, item) =>
+      (acc: number, item: ICart) =>
         acc + (item.price - (item.price * item.discount) / 100) * item.quantity,
       0
     )

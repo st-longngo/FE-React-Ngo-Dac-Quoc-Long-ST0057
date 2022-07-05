@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addCart } from '../../Cart/cart.actions';
-import { IProduct } from "../../../shared/interfaces/product";
-import ProductDiscount from "./ProductDiscount";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../cart/cart.actions';
+import { IProduct } from '../../../shared/interfaces/product';
+import ProductDiscount from './ProductDiscount';
 import { Badge, Button } from '../../../shared/components/partials/index';
 
 interface IProductItemProps {

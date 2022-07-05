@@ -1,10 +1,10 @@
 import { ICart } from './cart';
 
-export interface IStateReducer {
+export interface IRootState {
   cart: ICart[];
 };
 
-export interface IActionReducer {
+export interface IAction {
   type: string,
   payload: any
 }

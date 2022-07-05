@@ -1,6 +1,6 @@
-import * as TYPES from './../../shared/types/types';
-import { ICart } from './../../shared/interfaces/cart';
-import { IProduct } from './../../shared/interfaces/product';
+import * as TYPES from '../../shared/types/types';
+import { ICart } from '../../shared/interfaces/cart';
+import { IProduct } from '../../shared/interfaces/product';
 
 export const increseQuantityCart = (cart: ICart) => {
   return {

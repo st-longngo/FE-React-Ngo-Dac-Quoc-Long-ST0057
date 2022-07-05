@@ -1,6 +1,6 @@
 import * as TYPES from './../../shared/types/types';
 import { ICart } from './../../shared/interfaces/cart';
-import { IActionReducer, IStateReducer } from '../../shared/interfaces/reducer';
+import { IAction , IRootState } from '../../shared/interfaces/reducer';
 import { getData, setData } from './../../shared/common/common';
 
 const intitalStateCart = {
@@ -8,8 +8,8 @@ const intitalStateCart = {
 };
 
 const cartReducer = (
-  state: IStateReducer = intitalStateCart,
-  action: IActionReducer
+  state: IRootState = intitalStateCart,
+  action: IAction
 ) => {
   let cartIndex;
   switch (action.type) {

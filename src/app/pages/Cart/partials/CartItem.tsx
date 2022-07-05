@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { decreseQuantityCart, increseQuantityCart, deleteCart } from './../cart.actions';
+import { decreseQuantityCart, increseQuantityCart, deleteCart } from '../cart.actions';
 import { ICart } from '../../../shared/interfaces/cart';
 import { Button } from '../../../shared/components/partials/index';
 import { formatFixed } from '../../../shared/common/common';

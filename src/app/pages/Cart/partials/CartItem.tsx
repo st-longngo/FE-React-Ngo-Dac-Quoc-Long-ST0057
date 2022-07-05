@@ -43,12 +43,6 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
     setQuantity(+e.target.value);
   };
 
-  const handleKeyUpQuantity = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      changeQuantityOfCart('change');
-    }
-  };
-
   return (
     <li className="cart">
       <div className="cart-body">
@@ -58,7 +52,7 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
         <div className="cart-content">
           <h4 className="typo-2 txt-light cart-name">{cartItem.name}</h4>
           <span className="txt-regular cart-price">
-            ${cartItem.price - (cartItem.price * cartItem.discount) / 100}
+            ${formatFixed(cartItem.price - (cartItem.price * cartItem.discount) / 100)}
           </span>
           {cartItem.discount !== 0 && (
             <span className="txt-regular cart-discount">${cartItem.price}</span>

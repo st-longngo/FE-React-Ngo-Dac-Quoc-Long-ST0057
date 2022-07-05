@@ -13,9 +13,11 @@ const Home = () => {
   useEffect(() => {
     axios
     .get('https://6088e20da6f4a300174271e7.mockapi.io/products')
-    .then((respone) => {
-      setProductList(respone.data);
-      setLoading(true);
+    .then((response) => {
+      if(response) {
+        setProductList(response.data);
+        setLoading(true);
+      }
     })
     .catch((error) => {
       setLoading(false);

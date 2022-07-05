@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalContext } from '../../../shared/contexts/cart.context';
+import { useGlobalContext } from '../../../shared/contexts/global.context';
 import CartList from './CartList';
 import TotalList from './TotalList';
 import { formatFixed } from '../../../shared/common/common';

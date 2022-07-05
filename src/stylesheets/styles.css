@@ -433,6 +433,43 @@ h3 {
   background-color: #fbb03b;
   transform: translateX(-50%);
 }
+.form-row {
+  position: relative;
+}
+.form label {
+  display: block;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.form .input-text {
+  margin-bottom: 26px;
+}
+.form .input-error {
+  border: 1px solid #ff0000;
+}
+.form input {
+  position: relative;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  font-size: 16px;
+}
+.form i {
+  position: absolute;
+  right: 15px;
+  top: 47%;
+  color: #808080;
+  transform: translateX(-50%);
+}
+.form .register {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #fbb03b;
+}
 
 .header {
   position: fixed;
@@ -808,7 +845,7 @@ h3 {
 }
 
 .txt-right {
-  text-align: tight;
+  text-align: right;
 }
 
 .home-page .section-header {

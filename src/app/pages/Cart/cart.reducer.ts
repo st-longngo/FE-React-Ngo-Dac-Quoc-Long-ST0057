@@ -1,4 +1,4 @@
-import * as TYPES from './../../shared/types/types';
+import * as TYPES from '../../shared/constant/types';
 import { ICart } from './../../shared/interfaces/cart';
 import { IAction , IRootState } from '../../shared/interfaces/reducer';
 import { getData, setData } from './../../shared/common/common';

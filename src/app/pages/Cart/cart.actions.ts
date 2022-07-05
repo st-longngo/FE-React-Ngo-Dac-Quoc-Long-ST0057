@@ -1,4 +1,4 @@
-import * as TYPES from '../../shared/types/types';
+import * as TYPES from '../../shared/constant/types';
 import { ICart } from '../../shared/interfaces/cart';
 import { IProduct } from '../../shared/interfaces/product';
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/appReducer';
 import CartList from './CartList';
 import TotalList from './TotalList';
 import { ICart } from '../../../shared/interfaces/cart';
 import { formatFixed } from '../../../shared/common/common';
 
 const SectionCart = () => {
-  const { cart } = useSelector((state: any) => state.cartReducer);
+  const { cart } = useSelector((state: RootState) => state.cart);
 
   const totalPrice = formatFixed(
     cart.reduce(

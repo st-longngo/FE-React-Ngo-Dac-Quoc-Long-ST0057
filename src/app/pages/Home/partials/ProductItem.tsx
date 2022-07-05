@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../../shared/contexts/cart.context";
+import { useGlobalContext } from "../../../shared/contexts/global.context";
 import { IProduct } from "../../../shared/interfaces/product";
 import { ICart } from "../../../shared/interfaces/cart";
 import ProductDiscount from "./ProductDiscount";

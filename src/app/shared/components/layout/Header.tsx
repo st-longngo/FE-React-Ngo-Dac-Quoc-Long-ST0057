@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../../assets/icon';
-import { useGlobalContext } from '../../contexts/cart.context';
+import { useGlobalContext } from '../../contexts/global.context';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {

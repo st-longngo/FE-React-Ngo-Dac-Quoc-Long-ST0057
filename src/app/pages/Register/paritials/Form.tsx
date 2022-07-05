@@ -13,8 +13,7 @@ const Form = () => {
     formState: { errors },
     watch,
   } = useForm<IForm>();
-  const password = useRef({});
-  password.current = watch("password", "");
+  const password = watch("password", "");
   const onSubmit = (data: IForm) => {
     setUser(data);
     navigate('/');
@@ -58,7 +57,7 @@ const Form = () => {
             placeholder="Your Confirm Password"
             {...register("confirmPassword", {
               validate: (value) =>
-                value === password.current,
+                value === password,
             })}
           />
           <i className="bx bxs-lock"></i>

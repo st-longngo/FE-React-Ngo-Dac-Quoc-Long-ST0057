@@ -10,7 +10,8 @@ import { IForm } from './shared/interfaces/form';
 
 function App() {
   const [cart, setCart] = useState<ICart[]>(getData('cart', []));
-  const [user, setUser] = useState<IForm>({email: '', password: '', confirmPassword: ''})
+  const [user, setUser] = useState<IForm>({email: '', password: '', confirmPassword: ''});
+  
   useEffect(() => {
     if (!getData('cart', null)) {
       setData('cart', []);

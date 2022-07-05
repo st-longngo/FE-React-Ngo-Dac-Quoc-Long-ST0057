@@ -2,21 +2,14 @@ import * as TYPES from '../../shared/constant/types';
 import { ICart } from '../../shared/interfaces/cart';
 import { IProduct } from '../../shared/interfaces/product';
 
-export const increseQuantityCart = (cart: ICart) => {
+export const changeQuantityCart = (cart: ICart, increase: boolean) => {
   return {
-    type: TYPES.INCREASE_QUANTITY_CART,
-    payload: cart
-  };
-};
+    type: TYPES.CHANGE_QUANTITY_CART,
+    payload: { cart, increase }
+  }
+}
 
-export const decreseQuantityCart = (cart: ICart) => {
-  return {
-    type: TYPES.DECREASE_QUANTITY_CART,
-    payload: cart
-  };
-};
-
-export const deleteCart = (idCart: string) => {
+export const deleteCart = (idCart: number) => {
   return {
     type: TYPES.DELETE_CART,
     payload: idCart

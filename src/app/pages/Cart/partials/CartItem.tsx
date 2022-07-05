@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { decreseQuantityCart, increseQuantityCart, deleteCart } from '../cart.actions';
+import { deleteCart, changeQuantityCart } from '../cart.actions';
 import { ICart } from '../../../shared/interfaces/cart';
 import { Button } from '../../../shared/components/partials/index';
 import { formatFixed } from '../../../shared/common/common';
@@ -20,11 +20,11 @@ const CartItem = ({ cartItem }: ICartItemProps) => {
   const changeQuantityOfCart = (action: string) => {
     const changeCart = {
       add: (): void => {
-        dispatch(increseQuantityCart(cartItem));
+        dispatch(changeQuantityCart(cartItem, true));
         setQuantity(cartItem.quantity);
       },
       minus: (): void => {
-        dispatch(decreseQuantityCart(cartItem));
+        dispatch(changeQuantityCart(cartItem, false));
         setQuantity(cartItem.quantity);
       }
     };

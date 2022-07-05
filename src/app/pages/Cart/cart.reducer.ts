@@ -13,39 +13,39 @@ const cartReducer = (
 ) => {
   let cartIndex;
   switch (action.type) {
-    case TYPES.INCREASE_QUANTITY_CART:
-      cartIndex = state.cart.findIndex((item) => item.id === action.payload.id);
-      state.cart[cartIndex].quantity += 1;
-      setData('cart', [...state.cart]);
-      return {
-        ...state,
-        cart: [...state.cart],
-      };
-    case TYPES.DECREASE_QUANTITY_CART:
-      cartIndex = state.cart.findIndex((item) => item.id === action.payload.id);
-      if (state.cart[cartIndex].quantity > 1) {
-        state.cart[cartIndex].quantity -= 1;
+    case TYPES.CHANGE_QUANTITY_CART:
+      cartIndex = state.cart.findIndex((item) => item.id === action.payload.cart.id);
+      if(action.payload.increase) {
+        state.cart[cartIndex].quantity += 1;
         setData('cart', [...state.cart]);
         return {
           ...state,
-          cart: [...state.cart],
-        };
+          cart: [...state.cart]
+        }
       } else {
-        const newCart = state.cart.filter(
-          (item) => item.id !== action.payload.id
-        );
-        setData('cart', newCart);
-        return {
-          ...state,
-          cart: newCart,
+        if (state.cart[cartIndex].quantity > 1) {
+          state.cart[cartIndex].quantity -= 1;
+          setData('cart', [...state.cart]);
+          return {
+            ...state, 
+            cart: [...state.cart],
+          };
+        } else {
+          state.cart.splice(cartIndex, 1);
+          setData('cart', [...state.cart]);
+          return {
+            ...state,
+            cart: [...state.cart],
+          };
         };
-      };
+      }
     case TYPES.DELETE_CART:
-      const newCart = state.cart.filter((item) => item.id !== action.payload);
-      setData('cart', newCart);
+      cartIndex = state.cart.findIndex((item) => item.id === action.payload);
+      state.cart.splice(cartIndex, 1);
+      setData('cart', [...state.cart]);
       return {
         ...state,
-        cart: newCart,
+        cart: [...state.cart]
       };
     case TYPES.ADD_CART:
       cartIndex = state.cart.findIndex(

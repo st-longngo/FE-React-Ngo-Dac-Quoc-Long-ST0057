@@ -1,7 +1,7 @@
 import * as TYPES from '../../shared/constant/types';
-import { ICart } from '../../shared/interfaces/cart';
+import { ICart } from './../../shared/interfaces/cart';
 import { IAction , IRootState } from '../../shared/interfaces/reducer';
-import { getData, setData } from '../../shared/common/common';
+import { getData, setStateOfCart } from './../../shared/common/common';
 
 const intitalStateCart = {
   cart: getData('cart', [])
@@ -17,36 +17,20 @@ const cartReducer = (
       cartIndex = state.cart.findIndex((item) => item.id === action.payload.cart.id);
       if(action.payload.increase) {
         state.cart[cartIndex].quantity += 1;
-        setData('cart', [...state.cart]);
-        return {
-          ...state,
-          cart: [...state.cart]
-        }
+        return setStateOfCart(state);
       } else {
         if (state.cart[cartIndex].quantity > 1) {
           state.cart[cartIndex].quantity -= 1;
-          setData('cart', [...state.cart]);
-          return {
-            ...state, 
-            cart: [...state.cart],
-          };
+          return setStateOfCart(state);
         } else {
           state.cart.splice(cartIndex, 1);
-          setData('cart', [...state.cart]);
-          return {
-            ...state,
-            cart: [...state.cart],
-          };
+          return setStateOfCart(state);
         };
       }
     case TYPES.DELETE_CART:
       cartIndex = state.cart.findIndex((item) => item.id === action.payload);
       state.cart.splice(cartIndex, 1);
-      setData('cart', [...state.cart]);
-      return {
-        ...state,
-        cart: [...state.cart]
-      };
+      return setStateOfCart(state);
     case TYPES.ADD_CART:
       cartIndex = state.cart.findIndex(
         (item: ICart) => item.id === action.payload.id
@@ -56,18 +40,11 @@ const cartReducer = (
           ...action.payload,
           quantity: 1,
         };
-        setData('cart', [...state.cart, newCart]);
-        return {
-          ...state,
-          cart: [...state.cart, newCart],
-        };
+        state.cart.unshift(newCart);
+        return setStateOfCart(state);
       } else {
         state.cart[cartIndex].quantity += 1;
-        setData('cart', [...state.cart]);
-        return {
-          ...state,
-          cart: [...state.cart],
-        };
+        return setStateOfCart(state);
       };
     default:
       return state;

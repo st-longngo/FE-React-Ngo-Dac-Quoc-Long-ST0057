@@ -20,7 +20,7 @@ const Home = () => {
         setLoading(false);
       })
       .catch((error) => {
-        setLoading(true);
+        setLoading(false);
       });
   }, []);
 

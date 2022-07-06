@@ -23,11 +23,11 @@ const SectionCart = () => {
         <div className="row store-inner">
           <div className="col-8 col-sm-12">
             <h3 className="txt-bold txt-center cart-title">Shopping Cart</h3>
-            <CartList cart={cart} />
+            <CartList />
           </div>
           <div className="col-4 col-sm-12">
             <h3 className="txt-bold txt-center cart-title">Sub Total</h3>
-            <TotalList cart={cart} />
+            <TotalList />
             <div className="order-total">
               <p className="txt-bold">TOTAL PRICE</p>
               <span className="total">${totalPrice}</span>

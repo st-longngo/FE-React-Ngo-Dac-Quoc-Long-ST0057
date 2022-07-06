@@ -1,30 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
 import SectionBanner from './partials/SectionBanner';
 import SectionAbout from './partials/SectionAbout';
 import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionContact from './partials/SectionContact';
 import { IProduct } from '../../shared/interfaces/product';
-const Home = () => {
-  const [productList, setProductList] = useState<IProduct[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+import { RootState } from '../../app.reducers';
+import { getProducts } from './home.actions';
 
+const Home = () => {
+  const dispatch = useDispatch();
+  const { products, isLoading, error } = useSelector((state: RootState) => state.home);
+  
   useEffect(() => {
-    axios
-      .get('https://6088e20da6f4a300174271e7.mockapi.io/products')
-      .then((response) => {
-        if (response) {
-          setProductList(response.data);
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        setLoading(false);
-      });
+    dispatch<any>(getProducts());
   }, []);
 
-  return loading ? (
+  return isLoading ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>
@@ -34,12 +27,12 @@ const Home = () => {
       <SectionBanner />
       <SectionAbout />
       <SectionProduct
-        productList={productList}
+        productList={products}
         title="Selected just for you"
         hasButton
       />
       <SectionChooseus />
-      <SectionProduct productList={productList} title="Products in today" />
+      <SectionProduct productList={products} title="Products in today" />
       <SectionContact />
     </main>
   );

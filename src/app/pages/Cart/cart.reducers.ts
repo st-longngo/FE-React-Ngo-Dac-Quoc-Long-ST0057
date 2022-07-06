@@ -18,13 +18,11 @@ const cartReducer = (
       if(action.payload.increase) {
         state.cart[cartIndex].quantity += 1;
       } else {
-        if (state.cart[cartIndex].quantity > 1) {
-          state.cart[cartIndex].quantity -= 1;
-        } else {
-          state.cart.splice(cartIndex, 1);
-        };
+        state.cart[cartIndex].quantity -= 1;
       }
-      setData('cart', [...state.cart]);
+      if(state.cart[cartIndex].quantity == 0) {
+        state.cart.splice(cartIndex, 1);
+      }
       return {
         ...state,
         cart: [...state.cart],
@@ -32,7 +30,6 @@ const cartReducer = (
     case TYPES.DELETE_CART:
       cartIndex = state.cart.findIndex((item) => item.id === action.payload);
       state.cart.splice(cartIndex, 1);
-      setData('cart', [...state.cart]);
       return {
         ...state,
         cart: [...state.cart],
@@ -50,7 +47,6 @@ const cartReducer = (
       } else {
         state.cart[cartIndex].quantity += 1;
       };
-      setData('cart', [...state.cart]);
       return {
         ...state,
         cart: [...state.cart],

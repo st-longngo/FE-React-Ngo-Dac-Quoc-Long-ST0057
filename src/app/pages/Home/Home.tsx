@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SectionBanner from './partials/SectionBanner';
 import SectionAbout from './partials/SectionAbout';
 import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionContact from './partials/SectionContact';
-import { IProduct } from '../../shared/interfaces/product';
 import { RootState } from '../../app.reducers';
 import { getProducts } from './home.actions';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { products, isLoading, error } = useSelector((state: RootState) => state.home);
+  const { products, isLoading } = useSelector((state: RootState) => state.home);
   
   useEffect(() => {
     dispatch<any>(getProducts());

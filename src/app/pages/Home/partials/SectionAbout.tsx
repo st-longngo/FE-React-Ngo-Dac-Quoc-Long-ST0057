@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import AboutList from "./AboutList";
 
 const SectionAbout = () => {

@@ -1,4 +1,4 @@
-import { IRootState } from "../interfaces/reducer";
+import { IRootState } from '../interfaces/reducer';
 
 export const getData = (key: string, value: any) => {
   const data = JSON.parse(localStorage.getItem(key)!);

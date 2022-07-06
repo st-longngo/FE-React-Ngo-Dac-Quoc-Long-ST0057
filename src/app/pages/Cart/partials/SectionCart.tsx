@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/appReducer';
+import { RootState } from '../../../app.reducers';
 import CartList from './CartList';
 import TotalList from './TotalList';
 import { ICart } from '../../../shared/interfaces/cart';

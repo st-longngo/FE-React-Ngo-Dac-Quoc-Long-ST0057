@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/appReducer';
+import { RootState } from '../../../app.reducers';
 import Icon from '../../../../assets/icon';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {
   const [cartNumber, setCartNumber] = useState<number>();
   const { cart } = useSelector((state: RootState) => state.cart);
-  
+
   useEffect(() => {
     setCartNumber(cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0))
   }, [cart]);

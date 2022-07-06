@@ -1,7 +1,7 @@
 import * as TYPES from '../../shared/constant/types';
-import { ICart } from './../../shared/interfaces/cart';
+import { ICart } from '../../shared/interfaces/cart';
 import { IAction , IRootState } from '../../shared/interfaces/reducer';
-import { getData, setData } from './../../shared/common/common';
+import { getData, setData } from '../../shared/common/common';
 
 const intitalStateCart = {
   cart: getData('cart', [])

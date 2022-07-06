@@ -3,7 +3,7 @@ import '../stylesheets/styles.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './redux/appReducer';
+import rootReducer from './app.reducers';
 import { Home, Cart } from './pages/index';
 import { Header, Footer } from './shared/components/layout/index';
 

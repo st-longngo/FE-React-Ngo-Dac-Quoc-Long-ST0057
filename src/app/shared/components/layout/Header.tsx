@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/appReducer';
@@ -6,9 +6,13 @@ import Icon from '../../../../assets/icon';
 import { ICart } from './../../interfaces/cart';
 
 export const Header = () => {
+  const [cartNumber, setCartNumber] = useState<number>();
   const { cart } = useSelector((state: RootState) => state.cart);
+  
+  useEffect(() => {
+    setCartNumber(cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0))
+  }, [cart]);
 
-  const cartNumber = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
   return (
     <header className="header" id="header">
       <div className="container">

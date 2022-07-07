@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { IProduct } from '../../../shared/interfaces/product';
 import ProductList from './ProductList';
@@ -14,10 +14,10 @@ interface ISectionProductProps {
 
 const SectionProduct = ({ productList, title, hasButton }: ISectionProductProps) => {
   const { categories } = useSelector((state: RootState) => state.home);
- 
+  
   const getProductByCategory = (categories: string[]) => {
     if(categories.length) {
-      return productList.filter(product => categories.includes(product.category.toString()));
+      return productList.filter((product: IProduct) => categories.includes(product.category.toString()));
     }
     return productList;
   };

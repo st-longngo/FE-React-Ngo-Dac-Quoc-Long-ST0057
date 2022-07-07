@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import SectionBanner from './partials/SectionBanner';
 import SectionAbout from './partials/SectionAbout';
@@ -6,14 +7,22 @@ import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionContact from './partials/SectionContact';
 import { RootState } from '../../app.reducers';
-import { getProducts } from './home.actions';
+import { getProducts, resetHomePage } from './home.actions';
 
 const Home = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state: RootState) => state.home);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   
   useEffect(() => {
     dispatch<any>(getProducts());
+    return () => {
+      dispatch(resetHomePage());
+    }
   }, []);
 
   return isLoading ? (

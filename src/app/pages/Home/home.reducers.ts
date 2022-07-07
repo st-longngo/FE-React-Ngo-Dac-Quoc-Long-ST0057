@@ -49,7 +49,12 @@ const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
         categories: [...state.categories]
       }
     case TYPES.RESET_HOME_PAGE:
-      return initialStateHome;
+      return {
+        products: [],
+        isLoading: true,
+        error: '',
+        categories: []
+      }
     default:
       return state;
   }

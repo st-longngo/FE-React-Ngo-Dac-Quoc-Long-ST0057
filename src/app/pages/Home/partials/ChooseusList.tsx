@@ -1,7 +1,7 @@
-import React from "react";
-import { IChooseus } from "../../../shared/interfaces/chooseus";
-import ChooseusItem from "./ChooseusItem";
-import { chooseusList } from "../../../shared/constant/chooseus";
+import React from 'react';
+import { IChooseus } from '../../../shared/interfaces/chooseus';
+import ChooseusItem from './ChooseusItem';
+import { chooseusList } from '../../../shared/constant/chooseus';
 
 const ChooseusList = () => {
   return (

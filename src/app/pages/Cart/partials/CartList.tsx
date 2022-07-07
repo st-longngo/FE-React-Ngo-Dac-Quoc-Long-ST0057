@@ -1,14 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../app.reducers';
 import Image from '../../../../assets/images/index';
-import { ICart } from '../../../shared/interfaces/cart';
 import { ButtonLink } from '../../../shared/components/partials/index';
 import CartItem from './CartItem';
 
-interface ICartListProps {
-  cart: ICart[];
-}
+const CartList = () => {
+  const { cart } = useSelector((state: RootState) => state.cart);
 
-const CartList = ({ cart }: ICartListProps) => {
   return (
     <ul className="cart-list">
       <div className="cart-row">

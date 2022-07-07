@@ -1,36 +1,23 @@
-import React, { useEffect, useState } from "react";
-import "../stylesheets/styles.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MyGlobalContext } from "./shared/contexts/cart.context";
-import { ICart } from "./shared/interfaces/cart";
-import { Home, Cart } from "./pages/index";
-import { Header, Footer } from './shared/components/layout/index';
-import { getData, setData } from './shared/common/common';
+import React from 'react';
+import '../stylesheets/styles.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { logger } from 'redux-logger';
+import { applyMiddleware, legacy_createStore as createStore } from 'redux';
+import AppRoutes from './AppRoutes';
+import rootReducer from './app.reducers';
 
 function App() {
-  const [cart, setCart] = useState<ICart[]>(getData('cart', []));
-  
-  useEffect(() => {
-    if (!getData('cart', null)) {
-      setData('cart', []);
-    }
-  }, []);
-
-  useEffect(() => {
-    setData('cart', cart);
-  }, [cart]);
+  const middlewares = applyMiddleware(thunk, logger);
+  const store = createStore(rootReducer, middlewares);
 
   return (
-    <MyGlobalContext.Provider value={{cart, setCart}}>
+    <Provider store={store}>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
+        <AppRoutes />
       </BrowserRouter>
-    </MyGlobalContext.Provider>
+    </Provider>
   );
 }
 

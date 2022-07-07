@@ -1,7 +1,7 @@
-import React from "react";
-import { IAbout } from "../../../shared/interfaces/about";
-import AboutItem from "./AboutItem";
-import { dataAbout } from "../../../shared/constant/about";
+import React from 'react';
+import { IAbout } from '../../../shared/interfaces/about';
+import AboutItem from './AboutItem';
+import { dataAbout } from '../../../shared/constant/about';
 
 const AboutList = () => {
   return (

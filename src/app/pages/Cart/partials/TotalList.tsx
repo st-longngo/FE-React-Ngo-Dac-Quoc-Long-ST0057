@@ -1,12 +1,11 @@
 import React from 'react';
-import { ICart } from '../../../shared/interfaces/cart';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../app.reducers';
 import TotalItem from './TotalItem';
 
-interface ITotalListProps {
-  cart: ICart[];
-}
+const TotalList = () => {
+  const { cart } = useSelector((state: RootState) => state.cart);
 
-const TotalList = ({ cart }: ITotalListProps) => {
   return (
     <ul className="order-list">
       {cart.length ? (

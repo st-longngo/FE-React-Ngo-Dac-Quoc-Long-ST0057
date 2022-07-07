@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../../shared/contexts/cart.context";
-import { IProduct } from "../../../shared/interfaces/product";
-import { ICart } from "../../../shared/interfaces/cart";
-import ProductDiscount from "./ProductDiscount";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../cart/cart.actions';
+import { IProduct } from '../../../shared/interfaces/product';
+import ProductDiscount from './ProductDiscount';
 import { Badge, Button } from '../../../shared/components/partials/index';
 
 interface IProductItemProps {
@@ -12,18 +12,10 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { name, image, price, discount } = product;
-  const { cart, setCart } = useGlobalContext();
+  const dispatch = useDispatch();
 
   const addToCart = (product: IProduct): void => {
-    const cartIndex: number = cart.findIndex(
-      (item: ICart) => item.id === product.id
-    )!;
-    if (cartIndex < 0) {
-      cart.push({ ...product, quantity: 1 });
-    } else {
-      cart[cartIndex].quantity += 1;
-    }
-    setCart([...cart]);
+    dispatch(addCart(product));
   };
 
   return (

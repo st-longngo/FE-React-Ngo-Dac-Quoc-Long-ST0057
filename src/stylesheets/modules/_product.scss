@@ -1,5 +1,6 @@
 .product {
   position: relative;
+  padding: 10px 0;
   &-thumnail {
     position: relative;
     &:hover {
@@ -11,6 +12,7 @@
   }
   &-link {
     display: block;
+    height: 400px;
   }
   &-image {
     @include size(100%, 100%);

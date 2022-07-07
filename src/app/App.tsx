@@ -1,16 +1,19 @@
 import React from 'react';
 import '../stylesheets/styles.css';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import { logger } from 'redux-logger';
+import { BrowserRouter } from 'react-router-dom';
 import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import AppRoutes from './AppRoutes';
 import rootReducer from './app.reducers';
+import appMiddleware from './app.middlewares';
 
 function App() {
-  const middlewares = applyMiddleware(thunk, logger);
-  const store = createStore(rootReducer, middlewares);
+  const middlewares = createSagaMiddleware();
+  const store = createStore(rootReducer, applyMiddleware(middlewares, logger));
+
+  middlewares.run(appMiddleware);
 
   return (
     <Provider store={store}>

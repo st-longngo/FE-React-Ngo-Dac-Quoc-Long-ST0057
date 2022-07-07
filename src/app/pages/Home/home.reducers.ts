@@ -14,7 +14,13 @@ const initialStateHome = {
   error: ''
 }
 
-const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
+const initialStateCategoriesHome = {
+  categories: [],
+  isLoading: true,
+  error: '',
+};
+
+export const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
   switch(action.type) {
     case TYPES.GET_PRODUCTS:
       return {
@@ -39,4 +45,34 @@ const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
   }
 }
 
-export default homeReducer;
+export const homeCategoriesReducer = (
+  state = initialStateCategoriesHome,
+  action: any
+) => {
+  switch (action.type) {
+    case TYPES.GET_CATEGORIES:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case TYPES.GET_CATEGORIES_SUCCESS:
+      return {
+        ...state,
+        categories: action.payload,
+        isLoading: false,
+        error: '',
+      };
+
+    case TYPES.GET_CATEGORIES_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+

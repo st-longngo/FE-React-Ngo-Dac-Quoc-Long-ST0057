@@ -6,17 +6,18 @@ import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionContact from './partials/SectionContact';
 import { RootState } from '../../app.reducers';
-import { getProducts } from './home.actions';
+import { getProducts, getCategories } from './home.actions';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { products, isLoading } = useSelector((state: RootState) => state.home);
+  const { products, isLoading } = useSelector((state: RootState) => state.product);
   
   useEffect(() => {
-    dispatch<any>(getProducts());
+    dispatch(getProducts());
+    dispatch(getCategories());
   }, []);
 
-  return isLoading ? (
+  return isLoading  ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>

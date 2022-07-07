@@ -1,7 +1,7 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 import * as TYPES from '../../shared/constant/types';
-import { Dispatch, AnyAction } from "redux";
+import { Dispatch, AnyAction } from 'redux';
 
 export const getProducts = () => async (dispatch: Dispatch<AnyAction>) => {
   try {
@@ -11,13 +11,25 @@ export const getProducts = () => async (dispatch: Dispatch<AnyAction>) => {
     );
     dispatch({
       type: TYPES.GET_PRODUCTS_SUCCESS,
-      payload: res.data
-    })
-  }
-  catch (err) {
+      payload: res.data,
+    });
+  } catch (err) {
     dispatch({
       type: TYPES.GET_PRODUCTS_ERROR,
-      payload: err
-    })
+      payload: err,
+    });
+  }
+};
+
+export const filterProduct = (category: string) => {
+  return {
+    type: TYPES.FILTER_PRODUCT,
+    payload: category
+  }
+}
+
+export const resetHomePage = () => {
+  return {
+    type: TYPES.RESET_HOME_PAGE
   }
 }

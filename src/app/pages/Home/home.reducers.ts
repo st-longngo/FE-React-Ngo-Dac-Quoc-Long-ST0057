@@ -1,3 +1,4 @@
+import { stat } from 'fs';
 import * as TYPES from '../../shared/constant/types';
 import { IAction } from '../../shared/interfaces/reducer';
 import { IProduct } from './../../shared/interfaces/product';
@@ -5,13 +6,15 @@ import { IProduct } from './../../shared/interfaces/product';
 interface IHomeState {
   products: IProduct[],
   isLoading: boolean,
-  error: string
+  error: string,
+  categories: string[]
 }
 
 const initialStateHome = {
   products: [],
   isLoading: true,
-  error: ''
+  error: '',
+  categories: []
 }
 
 const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
@@ -34,6 +37,19 @@ const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
         isLoading: false,
         error: action.payload
       }
+    case TYPES.FILTER_PRODUCT:
+      const categoryIndex = state.categories.findIndex((category: string) => category === action.payload);
+      if(categoryIndex > -1) {
+        state.categories.splice(categoryIndex, 1);
+      } else {
+        state.categories.push(action.payload);
+      }
+      return {
+        ...state,
+        categories: [...state.categories]
+      }
+    case TYPES.RESET_HOME_PAGE:
+      return initialStateHome;
     default:
       return state;
   }

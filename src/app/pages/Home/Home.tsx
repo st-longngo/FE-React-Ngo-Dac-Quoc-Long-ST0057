@@ -13,10 +13,6 @@ const Home = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state: RootState) => state.home);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
   
   useEffect(() => {
     dispatch<any>(getProducts());

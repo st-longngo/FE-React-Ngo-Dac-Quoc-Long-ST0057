@@ -11,7 +11,7 @@ import { getProducts, getCategories } from './home.actions';
 const Home = () => {
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state: RootState) => state.product);
-  
+  const isLoadingCategory = useSelector((state: RootState) => state.categories.isLoading);
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getCategories());

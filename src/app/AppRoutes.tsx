@@ -7,11 +7,16 @@ import { Header, Footer } from './shared/components/layout';
 import { setData } from './shared/common/common';
 
 const AppRoutes = () => {
+  const location = useLocation();
   const { cart } = useSelector((state: RootState) => state.cart);
 
   useEffect(() => {
     setData('cart', cart);
   }, [cart]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>

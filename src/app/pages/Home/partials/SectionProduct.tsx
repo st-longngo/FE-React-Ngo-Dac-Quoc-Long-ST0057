@@ -2,7 +2,6 @@ import React from 'react';
 import { IProduct } from '../../../shared/interfaces/product';
 import ProductList from './ProductList';
 import { SectionTitle } from '../../../shared/components/partials/index';
-import ProductFilter from './ProductFilter';
 
 interface ISectionProductProps {
   productList: IProduct[];
@@ -15,7 +14,6 @@ const SectionProduct = ({ productList, title, hasButton}: ISectionProductProps) 
     <section className="section section-product-selected">
       <div className="container">
         <SectionTitle title={title} hasButton={hasButton} />
-        <ProductFilter/>
         <div className="section-content">
           <ProductList productList={productList} />
         </div>

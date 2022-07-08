@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../cart/cart.actions';
 import { IProduct } from '../../../shared/interfaces/product';
 import ProductDiscount from './ProductDiscount';
 import { Badge, Button } from '../../../shared/components/partials/index';
+import { RootState } from '../../../app.reducers';
 
 interface IProductItemProps {
   product: IProduct;
 }
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
-  const { name, image, price, discount } = product;
   const dispatch = useDispatch();
+  const categories = useSelector((state: RootState) => state.categories.data);
+  
+  const { name, image, price, discount, category } = product;
+  const productCategory: any = categories[category as keyof typeof categories];
 
   const addToCart = (product: IProduct): void => {
     dispatch(addCart(product));
@@ -44,6 +48,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             <ProductDiscount price={price} discount={discount} />
           </div>
         </div>
+        <p className='product-category'>{productCategory}</p>
       </div>
     </li>
   );

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../app.reducers';
+import { getProducts, getCategories } from './home.actions';
 import SectionBanner from './partials/SectionBanner';
 import SectionAbout from './partials/SectionAbout';
 import SectionProduct from './partials/SectionProduct';
 import SectionChooseus from './partials/SectionChooseus';
 import SectionContact from './partials/SectionContact';
-import { RootState } from '../../app.reducers';
-import { getProducts, getCategories } from './home.actions';
 
 const Home = () => {
   const dispatch = useDispatch();

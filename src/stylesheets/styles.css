@@ -316,6 +316,13 @@ h3 {
 .product-sale .product-price .product-discount {
   color: #cecece;
 }
+.product-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 20px;
+  margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 768px) {
   .product {

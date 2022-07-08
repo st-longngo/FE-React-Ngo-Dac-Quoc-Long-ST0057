@@ -51,6 +51,11 @@
       }
     }
   }
+  &-filter {
+    @include flex($content: center, $items: center);
+    gap: 0 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @include maxWidth($mobile) {

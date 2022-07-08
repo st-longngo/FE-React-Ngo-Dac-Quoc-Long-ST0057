@@ -1,8 +1,9 @@
 import * as TYPES from '../../shared/constant/types';
 import { IAction } from '../../shared/interfaces/reducer';
+import { IProduct } from './../../shared/interfaces/product';
 
-interface IStateData {
-  data: any,
+interface IStateData<D> {
+  data: D,
   isLoading: boolean,
   error: string
 }
@@ -19,7 +20,7 @@ const initialStateCategories = {
   error: '',
 };
 
-export const productsReducer = (state: IStateData = initialStateProducts, action: IAction) => {
+export const productsReducer = (state: IStateData<IProduct[]> = initialStateProducts, action: IAction) => {
   switch(action.type) {
     case TYPES.GET_PRODUCTS:
       return {
@@ -45,7 +46,7 @@ export const productsReducer = (state: IStateData = initialStateProducts, action
 }
 
 export const categoriesReducer = (
-  state : IStateData = initialStateCategories,
+  state : IStateData<{}> = initialStateCategories,
   action: any
 ) => {
   switch (action.type) {
@@ -57,7 +58,7 @@ export const categoriesReducer = (
     case TYPES.GET_CATEGORIES_SUCCESS:
       return {
         ...state,
-        data: Object.fromEntries(action.payload.map((item: any) => Object.values(item))),
+        data: action.payload,
         isLoading: false,
         error: '',
       };

@@ -2,19 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
 
-const ProductFilter = () => {
-  const [ categories, setCategories ] = useState<string[]>([]);
-  const [ searchParams, setSearchParams ] = useSearchParams({});
-  const { register } = useForm();
+interface IProductFilterProps {
+  categories: string[],
+  setCategories: any
+}
 
-  useEffect(() => {
-    if(categories.length) {
-      setSearchParams({category: categories.join(' ')});
-    } else {
-      searchParams.delete('category');
-      setSearchParams(searchParams);
-    }
-  }, [categories]);
+const ProductFilter = ({ categories, setCategories } : IProductFilterProps ) => {
+  const { register, setValue } = useForm();
 
   const handleCheckbox = (e: any) => {
     const categoryValue = e.target.value;
@@ -30,10 +24,10 @@ const ProductFilter = () => {
 
   return (
     <form>
-      <input {...register("checkbox")} type="checkbox" value="1" onChange={handleCheckbox}/> JUMPSUITS
-      <input {...register("checkbox")} type="checkbox" value="2" onChange={handleCheckbox}/> SHIRT
-      <input {...register("checkbox")} type="checkbox" value="3" onChange={handleCheckbox}/> TROUSER
-      <input {...register("checkbox")} type="checkbox" value="4" onChange={handleCheckbox}/> JEANS
+      <input {...register("1")} type="checkbox" value="1" onChange={handleCheckbox}/> JUMPSUITS
+      <input {...register("2")} type="checkbox" value="2" onChange={handleCheckbox}/> SHIRT
+      <input {...register("3")} type="checkbox" value="3" onChange={handleCheckbox}/> TROUSER
+      <input {...register("4")} type="checkbox" value="4" onChange={handleCheckbox}/> JEANS
     </form>
   )
 }

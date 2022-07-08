@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import SectionBanner from './partials/SectionBanner';
 import SectionAbout from './partials/SectionAbout';
@@ -13,32 +12,33 @@ import { useSearchParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const Home = () => {
-  const [ categories, setCategories ] = useState<string[]>([]);
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state: RootState) => state.home);
   const [ searchParams, setSearchParams ] = useSearchParams({});
+  const value = searchParams.get('categories');
+  const [ categories, setCategories ] = useState<string[]>(value?.split(',') || []);
+
+  useEffect(() => {
+    setParams();
+  }, [categories]);
   
   useEffect(() => {
+    setParams();
     dispatch<any>(getProducts());
     return () => {
       dispatch(resetHomePage());
-    }
+    };
   }, []);
 
-  useEffect(() => {
-
-  }, []);
-
-  useEffect(() => {
-    setCategories(searchParams.get('category')?.split(' ')!);
-  }, [searchParams]);
-
-  const getProductsByCategory = (productList: IProduct[]) => {
-    if(categories) {
-      return productList.filter((item: IProduct) => categories.includes(item.category));
+  
+  const setParams = () => {
+    if (categories.length) {
+      setSearchParams({ categories: categories.join(',') });
+    } else {
+      searchParams.delete('categories');
+      setSearchParams(searchParams);
     }
-    return productList;
-  }
+  };
 
   return isLoading ? (
     <main className="loading-container">
@@ -50,12 +50,19 @@ const Home = () => {
       <SectionBanner />
       <SectionAbout />
       <SectionProduct
-        productList={getProductsByCategory(products)}
+        productList={products}
         title="Selected just for you"
         hasButton
+        categories={categories}
+        setCategories={setCategories}
       />
       <SectionChooseus />
-      <SectionProduct productList={products} title="Products in today" />
+      <SectionProduct
+        productList={products}
+        title="Products in today"
+        categories={categories}
+        setCategories={setCategories}
+      />
       <SectionContact />
     </main>
   );

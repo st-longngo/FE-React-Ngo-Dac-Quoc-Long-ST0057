@@ -1,32 +1,25 @@
 import * as TYPES from '../../shared/constant/types';
 import { IAction } from '../../shared/interfaces/reducer';
-import { IProduct } from './../../shared/interfaces/product';
 
-interface IStateProductsHome {
-  products: IProduct[],
+interface IStateData {
+  data: any,
   isLoading: boolean,
   error: string
 }
 
-interface IStateCategoriesHome {
-  categories: Object,
-  isLoading: boolean,
-  error: string
-}
-
-const initialStateProductsHome = {
-  products: [],
+const initialStateProducts = {
+  data: [],
   isLoading: true,
   error: ''
 }
 
-const initialStateCategoriesHome = {
-  categories: {},
+const initialStateCategories = {
+  data: {},
   isLoading: true,
   error: '',
 };
 
-export const homeProductsReducer = (state: IStateProductsHome = initialStateProductsHome, action: IAction) => {
+export const productsReducer = (state: IStateData = initialStateProducts, action: IAction) => {
   switch(action.type) {
     case TYPES.GET_PRODUCTS:
       return {
@@ -36,7 +29,7 @@ export const homeProductsReducer = (state: IStateProductsHome = initialStateProd
     case TYPES.GET_PRODUCTS_SUCCESS:
       return {
         ...state,
-        products: action.payload,
+        data: action.payload,
         isLoading: false,
         error: ''
       }
@@ -51,8 +44,8 @@ export const homeProductsReducer = (state: IStateProductsHome = initialStateProd
   }
 }
 
-export const homeCategoriesReducer = (
-  state : IStateCategoriesHome = initialStateCategoriesHome,
+export const categoriesReducer = (
+  state : IStateData = initialStateCategories,
   action: any
 ) => {
   switch (action.type) {
@@ -64,7 +57,7 @@ export const homeCategoriesReducer = (
     case TYPES.GET_CATEGORIES_SUCCESS:
       return {
         ...state,
-        categories: Object.fromEntries(action.payload.map((item: any) => Object.values(item))),
+        data: Object.fromEntries(action.payload.map((item: any) => Object.values(item))),
         isLoading: false,
         error: '',
       };

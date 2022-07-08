@@ -10,14 +10,14 @@ import { getProducts, getCategories } from './home.actions';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { products, isLoading } = useSelector((state: RootState) => state.product);
+  const products = useSelector((state: RootState) => state.product);
   
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getCategories());
   }, []);
 
-  return isLoading ? (
+  return products.isLoading ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>
@@ -27,12 +27,12 @@ const Home = () => {
       <SectionBanner />
       <SectionAbout />
       <SectionProduct
-        productList={products}
+        productList={products.data}
         title="Selected just for you"
         hasButton
       />
       <SectionChooseus />
-      <SectionProduct productList={products} title="Products in today" />
+      <SectionProduct productList={products.data} title="Products in today" />
       <SectionContact />
     </main>
   );

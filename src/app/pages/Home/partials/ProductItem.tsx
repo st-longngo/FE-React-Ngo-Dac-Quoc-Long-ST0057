@@ -13,7 +13,8 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state: RootState) => state.categories);
+  const categories = useSelector((state: RootState) => state.categories.data);
+  
   const { name, image, price, discount, category } = product;
   const productCategory: any = categories[category as keyof typeof categories];
 

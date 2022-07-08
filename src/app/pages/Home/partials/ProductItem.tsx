@@ -12,18 +12,14 @@ interface IProductItemProps {
 }
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
-  const { category, name, image, price, discount } = product;
-  const { categories, isLoading } = useSelector((state: RootState) => state.categories);
-  const isLoadingProduct = useSelector((state: RootState) => state.product.isLoading);
   const dispatch = useDispatch();
- 
+  const { categories } = useSelector((state: RootState) => state.categories);
+  const { name, image, price, discount, category } = product;
+  const productCategory: any = categories[category as keyof typeof categories];
+
   const addToCart = (product: IProduct): void => {
     dispatch(addCart(product));
   };
-  const renderCategory = () => {
-    const categoryIndex = categories.findIndex((item: any) => item.id === +category);
-    return categories[categoryIndex].name;
-  }
 
   return (
     <li className="col-3 col-sm-6">
@@ -51,7 +47,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             <ProductDiscount price={price} discount={discount} />
           </div>
         </div>
-        {(!isLoading && !isLoadingProduct) && <p className='product-category'>{renderCategory()}</p>}
+        <p className='product-category'>{productCategory}</p>
       </div>
     </li>
   );

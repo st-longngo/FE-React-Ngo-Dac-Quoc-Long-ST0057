@@ -17,7 +17,7 @@ const Home = () => {
     dispatch(getCategories());
   }, []);
 
-  return isLoading  ? (
+  return isLoading ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>

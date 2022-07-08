@@ -16,7 +16,7 @@ const Home = () => {
   const { products, isLoading } = useSelector((state: RootState) => state.home);
   const [ searchParams, setSearchParams ] = useSearchParams({});
   const value = searchParams.get('categories');
-  const [ categories, setCategories ] = useState<string[]>(value?.split(',') || []);
+  const [ categories, setCategories ] = useState<string[]>(value?.split(' ') || []);
 
   useEffect(() => {
     setParams();
@@ -33,7 +33,7 @@ const Home = () => {
   
   const setParams = () => {
     if (categories.length) {
-      setSearchParams({ categories: categories.join(',') });
+      setSearchParams({ categories: categories.join(' ') });
     } else {
       searchParams.delete('categories');
       setSearchParams(searchParams);
@@ -60,8 +60,7 @@ const Home = () => {
       <SectionProduct
         productList={products}
         title="Products in today"
-        categories={categories}
-        setCategories={setCategories}
+        categories={[]}
       />
       <SectionContact />
     </main>

@@ -11,7 +11,7 @@ interface ISectionProductProps {
   title: string;
   hasButton?: boolean;
   categories: string[];
-  setCategories: any
+  setCategories?: any
 }
 
 const SectionProduct = ({ productList, title, hasButton, categories, setCategories }: ISectionProductProps) => {  

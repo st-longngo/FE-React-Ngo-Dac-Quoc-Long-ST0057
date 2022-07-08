@@ -10,6 +10,16 @@ interface IProductFilterProps {
 const ProductFilter = ({ categories, setCategories } : IProductFilterProps ) => {
   const { register, setValue } = useForm();
 
+  const setValueCheckbox = () => {
+    categories.forEach((item) => {
+      setValue(item, true);
+    });
+  }
+
+  useEffect(() => {
+    setValueCheckbox();
+  }, [categories]);
+
   const handleCheckbox = (e: any) => {
     const categoryValue = e.target.value;
     const categoryIndex = categories.findIndex((item: any) => item === categoryValue);
@@ -24,10 +34,10 @@ const ProductFilter = ({ categories, setCategories } : IProductFilterProps ) => 
 
   return (
     <form>
-      <input {...register("1")} type="checkbox" value="1" onChange={handleCheckbox}/> JUMPSUITS
-      <input {...register("2")} type="checkbox" value="2" onChange={handleCheckbox}/> SHIRT
-      <input {...register("3")} type="checkbox" value="3" onChange={handleCheckbox}/> TROUSER
-      <input {...register("4")} type="checkbox" value="4" onChange={handleCheckbox}/> JEANS
+      <input {...register("1")} id="1" type="checkbox" value="1" onChange={handleCheckbox}/> <label htmlFor="1">JUMPSUITS</label>
+      <input {...register("2")} id="2" type="checkbox" value="2" onChange={handleCheckbox}/> <label htmlFor="2">SHIRT</label>
+      <input {...register("3")} id="3" type="checkbox" value="3" onChange={handleCheckbox}/> <label htmlFor="3">TROUSER</label>
+      <input {...register("4")} id="4" type="checkbox" value="4" onChange={handleCheckbox}/> <label htmlFor="4">JEANS</label>
     </form>
   )
 }

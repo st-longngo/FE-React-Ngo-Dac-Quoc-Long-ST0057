@@ -29,15 +29,17 @@ const SectionProduct = ({ productList, title, hasButton, paramsCategory, setPara
     <section className="section section-product-selected">
       <div className="container">
         <SectionTitle title={title} hasButton={hasButton} />
-        <ProductFilter paramsCategory={paramsCategory} setParamsCategory={setParamsCategory} />
-        <div className="section-content">
-          {
-            (!isLoadingProduct && !isLoadingCategories) && <ProductList productList={getProductByCategory()} />
-          }
-        </div>
+        {(!isLoadingProduct && !isLoadingCategories) &&
+          <>
+            <ProductFilter paramsCategory={paramsCategory} setParamsCategory={setParamsCategory} />
+            <div className="section-content">
+              <ProductList productList={getProductByCategory()} />
+            </div>
+          </>
+        }
       </div>
     </section>
-  );
+  )
 };
 
 export default SectionProduct;

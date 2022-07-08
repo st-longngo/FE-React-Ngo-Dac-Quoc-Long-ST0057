@@ -11,6 +11,7 @@ import SectionContact from './partials/SectionContact';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const categories = useSelector((state: RootState) => state.categories);
   const products = useSelector((state: RootState) => state.product);
   const [ searchParams, setSearchParams ] = useSearchParams({});
   const getParams = searchParams.get('categories')?.split(' ') || [];
@@ -35,7 +36,7 @@ const Home = () => {
     }
   };
 
-  return products.isLoading ? (
+  return products.isLoading && categories.isLoading ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>

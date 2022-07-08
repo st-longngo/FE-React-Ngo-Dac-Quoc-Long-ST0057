@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { RootState } from '../../../app.reducers';
-import { filterProduct } from '../home.actions';
 
 const ProductFilter = () => {
-  const dispatch = useDispatch();
+  const [ categories, setCategories ] = useState<string[]>([]);
   const [ searchParams, setSearchParams ] = useSearchParams({});
-  const { categories } = useSelector((state: RootState) => state.home)
   const { register } = useForm();
 
+  useEffect(() => {
+    if(categories.length) {
+      setSearchParams({category: categories.join(' ')});
+    } else {
+      searchParams.delete('category');
+      setSearchParams(searchParams);
+    }
+  }, [categories]);
+
   const handleCheckbox = (e: any) => {
-    setSearchParams({ category: categories.join(' ') });
-    dispatch(filterProduct(e.target.value));
+    const categoryValue = e.target.value;
+    const categoryIndex = categories.findIndex((item: any) => item === categoryValue);
+    if(categoryIndex > -1) {
+      const newCategories = categories.filter((item: any) => item !== categoryValue);
+      setCategories(newCategories);
+    } else {
+      const newCategories =[...categories, categoryValue];
+      setCategories(newCategories);
+    }
   };
 
   return (

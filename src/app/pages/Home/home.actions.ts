@@ -5,9 +5,9 @@ export const getProducts = () => ({
   type: TYPES.GET_PRODUCTS,
 });
 
-export const getProductsSuccess = (posts: any) => ({
+export const getProductsSuccess = (products: any) => ({
   type: TYPES.GET_PRODUCTS_SUCCESS,
-  payload: posts,
+  payload: products,
 });
 
 export const getProductsError = (error: any) => ({

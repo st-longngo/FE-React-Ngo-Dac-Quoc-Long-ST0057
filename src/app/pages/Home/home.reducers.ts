@@ -8,7 +8,7 @@ interface IHomeState {
   error: string
 }
 
-const initialStateHome = {
+const initialStateProductsHome = {
   products: [],
   isLoading: true,
   error: ''
@@ -20,7 +20,7 @@ const initialStateCategoriesHome = {
   error: '',
 };
 
-export const homeReducer = (state: IHomeState = initialStateHome, action: IAction) => {
+export const homeProductsReducer = (state: IHomeState = initialStateProductsHome, action: IAction) => {
   switch(action.type) {
     case TYPES.GET_PRODUCTS:
       return {
@@ -75,4 +75,3 @@ export const homeCategoriesReducer = (
       return state;
   }
 };
-

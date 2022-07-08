@@ -36,7 +36,7 @@ const Home = () => {
     }
   };
 
-  return products.isLoading && categories.isLoading ? (
+  return products.isLoading || categories.isLoading ? (
     <main className="loading-container">
       <p className="spinner-text">loading...</p>
       <div className="spinner"></div>

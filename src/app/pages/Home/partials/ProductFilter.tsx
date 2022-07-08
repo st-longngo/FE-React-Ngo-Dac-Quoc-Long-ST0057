@@ -13,9 +13,7 @@ const ProductFilter = ({ paramsCategory, setParamsCategory } : IProductFilterPro
   const { register, setValue } = useForm();
 
   const setValueCheckbox = () => {
-    paramsCategory.map((item) => {
-      setValue(categories[item], true);
-    });
+    setValue('checkbox', paramsCategory);
   }
 
   useEffect(() => {
@@ -26,20 +24,20 @@ const ProductFilter = ({ paramsCategory, setParamsCategory } : IProductFilterPro
     const categoryValue = e.target.id;
     const categoryIndex = paramsCategory.findIndex((item: any) => item === categoryValue);
     if(categoryIndex > -1) {
-      const newCategories = paramsCategory.filter((item: any) => item !== categoryValue);
-      setParamsCategory(newCategories);
+      const newParamsCategory = paramsCategory.filter((item: any) => item !== categoryValue);
+      setParamsCategory(newParamsCategory);
     } else {
-      const newCategories =[...paramsCategory, categoryValue];
-      setParamsCategory(newCategories);
+      const newParamsCategory =[...paramsCategory, categoryValue];
+      setParamsCategory(newParamsCategory);
     }
   };
 
   return (
-    <form>
+    <form className="product-filter">
       {
         Object.keys(categories).map((key: any) => {
           return <div key={key}>
-            <input {...register(categories[key])} id={key} type="checkbox" value={categories[key]} onChange={handleCheckbox} />
+            <input {...register("checkbox")} id={key} type="checkbox" value={key} onChange={handleCheckbox} />
             <label htmlFor={key}>{categories[key]}</label>
           </div>
         })
